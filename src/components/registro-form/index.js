@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react' 
 
 function RegistryForm ( props ) {
-    const [ newUser, setNewUser ] = useState({}) //debería inicializarlo con las propiedades que va a tener?
+    const [ newUser, setNewUser ] = useState({}) 
 
     const createNewUserHandler = ( event ) => {
         let value = event.target.value
         let property = event.target.name
-        // let objectNewUser = newUser
-        // objectNewUser[property] = value
         setNewUser( {...newUser, [property] : value} )
     }
 
