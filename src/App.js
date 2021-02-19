@@ -1,25 +1,59 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import RegistroForm from './Pages/signup'
+import NavBar from './components/navbar/index'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      firstStae: ""
+    }
+  }
+
+  render() {
+    return (
+
+      <div className="App container-fluid">
+        <div className="row">
+          <div className="container">
+            <Router>
+
+              <NavBar />
+
+              <Switch>
+                <Route path="/catalogo">
+                  <h1>Soy la vista de catalogo</h1>
+                </Route>
+                <Route path="/formacion">
+                  <h1>Soy la vista de formacion</h1>
+                </Route>
+                <Route path="/actividades">
+                  <h1>Soy la vista de actividades</h1>
+                </Route>
+                <Route path="/signup">
+                  <RegistroForm />
+                </Route>
+                <Route path="/login">
+                  <h1>Soy la vista de login</h1>
+                </Route>
+                <Route exact path="/">
+                  <h1>Soy home</h1>
+                </Route>
+              </Switch>
+
+            </Router>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

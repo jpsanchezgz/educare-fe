@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #B0B1A9;
 }
 
 .App-logo {
@@ -35,4 +36,136 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  background-color: #E5E5E5;
+}
+
+.search-row {
+  background-color: #B0B1A9;
+  height: 7%;
+}
+
+.green-circle {
+
+width: 15%;
+height: 40%;
+
+position: absolute;
+/* left: 49.16%;
+right: -6.16%; */
+top: 25%;
+bottom: 0;
+right: 0;
+left: 25%;
+
+
+background: rgba(62, 108, 95, 0.1);
+transform: matrix(0.84, 0.43, -0.6, 0.88, 0, 0);
+
+border-radius: 75%;
+}
+.registry-form {
+  color: #5AAA94;
+}
+
+.form-controle {
+  border: 2px solid #5AAA94;
+  border-radius: 8px;
+  color: #5AAA94;
+  width: 100%;
+  /* text-align: center; */
+  /* text-transform: capitalize; */
+  font-size: 25px;
+  line-height: 56px;
+  padding-left: 15px;
+
+}
+::placeholder {
+  color: #5AAA94;
+  opacity: 0.65;
+}
+
+.input-1 {
+  background-color: red;
+  border: 2px solid #5AAA94;
+  border-radius: 8px;
+}
+.vlc {
+  vertical-align: auto;
+}
+.vl {
+  border-left: 2px solid #B0B1A9;
+  height: 500px;
+  margin-top: 5rem;
+
+  
+}
+
+p{
+  color: #4D554F;
+}
+
+.search-component {
+  background-color: #d1e2dc;
+  padding: 5px;
+  border-radius: 25px;
+}
+
+.search-input {
+  border: none;
+  background-color: #d1e2dc;
+  margin-left: 1rem;
+}
+.search-button {
+  border: none;
+  background-color: #d1e2dc;
+  color: #5AAA94;
+}
+
+.container {
+  border-radius: 25px;
+  height: 100%;
+}
+
+.signup-button {
+  border: none;
+  background-color: #EEBD52;
+  border-radius: 25px;
+  box-shadow: 4px 8px 5px #ba93408e;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 5px;
+  padding: 0px 20px;
+
+}
+
+.login-button {
+  border: 2px solid #5AAA94;
+  border-radius: 25px;
+  box-shadow: 4px 8px 5px  #9b9b9b4b;
+  color: whitesmoke;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 5px;
+  padding: 0px 20px;
+
+}
+
+.navbar-class {
+  margin-top: 20px;
+}
+
+.create-user-button {
+  border: none;
+  border-radius: 50px;
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  background-color: #5AAA94;
+  color: whitesmoke;
+  width: 100%;
+  padding: 1.5rem;
+
+
 }
