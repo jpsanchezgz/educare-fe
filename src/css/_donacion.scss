@@ -1,0 +1,32 @@
+
+.don-img-col {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+    align-content: center;
+    
+}
+
+.paypal-col {
+    margin: 20% 0;
+    padding-left: 2rem;
+}
+
+
+.donacion-pic {
+    width: 100%;
+}
+
+.paypal-pic {
+    width: 100%;
+}
+
+.donate-button {
+    
+    &:hover {
+        transform: scale(1.5);
+        transition: 0.5s;
+    }
+}

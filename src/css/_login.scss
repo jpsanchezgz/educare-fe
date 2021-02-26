@@ -1,0 +1,47 @@
+.marco-login {
+    height: 100%;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+    align-content: stretch;
+    padding: 2rem;
+    margin: 5% 5%;
+    
+    @media screen and (max-width: 320px) {
+         height: calc(100vh - 56px);
+    }
+
+    .loginform-button {
+        border: none;
+        border-radius: 50px;
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        background-color: #5AAA94;
+        color: whitesmoke;
+        width: 50%;
+        padding: 1.5rem;
+        transition: 0.5s;
+        
+        &:hover {
+            background-color: #305e52;
+            transform: scale(1.005);
+        }
+      
+      }
+
+      .first-sign-up {
+          color: grey;
+          font-size: 1.5rem;
+          text-align: left;
+          
+
+          &:hover {
+            color: rgb(71, 71, 71);
+            text-decoration: underline;
+            
+        }
+      }
+}

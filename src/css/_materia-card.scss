@@ -1,0 +1,25 @@
+.card-my {
+    background-color: #EEBD52;
+
+    .title {
+        color: #5AAA94;
+    }
+
+    .button {
+    border: 3px solid #6EA895;
+    border-radius: 16px;
+    color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+
+    &:hover {
+        background-color: #5AAA94;
+        cursor: pointer;
+        color: #c7c7c7;
+        // transform: scale(1.1);
+        // transition: 0.5s;
+    }
+    
+    }
+
+}

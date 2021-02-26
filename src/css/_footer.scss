@@ -1,0 +1,70 @@
+.footer-container {
+    background-color: #5AAA94;
+
+    .footer-row {
+        
+        background-color: red;
+    }
+
+    .icons-div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: stretch;
+        align-content: stretch;
+
+        
+        
+
+        .icons {
+            margin: auto;
+    
+            &:hover {
+                filter: 
+                grayscale(1%) 
+                invert(1%)
+                brightness(1%);
+            }
+        }
+
+    }
+
+   
+
+        // @media screen and (min-width: 992px) {
+        //     // height: 50%;
+        //   }
+
+        .li-footer {
+            
+            list-style: none;
+            text-decoration: none;
+            color: white;
+            padding: 0px;
+            margin: 0;
+
+            &:hover {
+                color: gray;
+            }
+        }
+    
+    
+
+    .md-footer {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: stretch;
+    }
+
+    .donate-bttn {
+
+        &:hover {
+            transform: scale(1.5);
+            transition: 0.5s;
+        }
+    }
+}

@@ -8,6 +8,11 @@ import {
 } from "react-router-dom";
 import RegistroForm from './Pages/signup'
 import NavBar from './components/navbar/index'
+import Home from './Pages/home'
+import FooterEducare from './components/footer/footer';
+import Login from './Pages/login';
+import Donar from './Pages/donar';
+import Materias from './Pages/materias';
 
 class App extends Component {
   constructor() {
@@ -19,21 +24,25 @@ class App extends Component {
 
   render() {
     return (
-
+      <Router>
       <div className="App container-fluid">
         <div className="row">
           <div className="container">
-            <Router>
+            
 
               <NavBar />
 
               <Switch>
+                <Route path="/materias">
+                  <Materias />
+                </Route>
+                <Route path="/donacion">
+                  <Donar />
+                </Route>
                 <Route path="/catalogo">
                   <h1>Soy la vista de catalogo</h1>
                 </Route>
-                <Route path="/formacion">
-                  <h1>Soy la vista de formacion</h1>
-                </Route>
+               
                 <Route path="/actividades">
                   <h1>Soy la vista de actividades</h1>
                 </Route>
@@ -41,17 +50,22 @@ class App extends Component {
                   <RegistroForm />
                 </Route>
                 <Route path="/login">
-                  <h1>Soy la vista de login</h1>
+                  <Login />
                 </Route>
                 <Route exact path="/">
-                  <h1>Soy home</h1>
+                  <Home />
                 </Route>
               </Switch>
 
-            </Router>
+             
+
+            
           </div>
         </div>
       </div>
+      <FooterEducare />
+      </Router>
+      
     );
   }
 }

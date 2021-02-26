@@ -30,7 +30,9 @@ function RegistryForm ( props ) {
             .then(response => response.json())
             .then(data => {
                 console.log(data)
+                window.location.href = "http://localhost:3000/home"
             });
+             
     }
 
     return (
@@ -45,7 +47,7 @@ function RegistryForm ( props ) {
             <input class="form-controle" type="text" placeholder="E-mail" name="email" onChange={createNewUserHandler} />
           </div>
           <div className="form-group">
-            <input class="form-controle" type="text" placeholder="Contraseña" name="password" onChange={createNewUserHandler} />
+            <input class="form-controle" type="password" placeholder="Contraseña" name="password" onChange={createNewUserHandler} />
           </div>
           <div className="form-group">
             <input class="form-controle" type="date" placeholder="Fecha de nacimiento de tu hijo" name="kidBirthday" onChange={createNewUserHandler} />
