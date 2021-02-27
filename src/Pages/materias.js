@@ -1,46 +1,96 @@
+import React, {useState, useEffect } from 'react'
+
 import MateriaCard from '../components/materias-cards/materias-cards'
+import SearchBar from '../components/searchbar/search-bar'
 
-function Materias () {
+
+function Materias ( props ) {
+    const [materias, setMaterias] = useState([
+        {
+            title: "Lenguaje y comunicación",
+            content: "Fomenta la lectura de tus pequeños a una temprana edad."
+        },
+        {
+            title: "Pensamiento lógico y estructurado",
+            content: "Fomenta desde pequeños el pensamiento estructurado y metódico."
+        },
+        {
+            title: "Arte y música",
+            content: "Ayuda a desarrollar la creatividad de tus hijos para explotar sus talentos."
+        },
+        {
+            title: "Desarrollo emocional y social",
+            content: "Fomenta la lectura de tus pequeños a una temprana edad."
+        },
+        {
+            title: "Arte y música",
+            content: "Fomenta desde pequeños el pensamiento estructurado y metódico."
+        },
+        {
+            title: "Desarrollo intelectual y cognitivo",
+            content: "Ayuda a desarrollar la creatividad de tus hijos para explotar sus talentos."
+        },
+        {
+            title: "Lenguaje y comunicación",
+            content: "Fomenta la lectura de tus pequeños a una temprana edad."
+        },
+        {
+            title: "Pensamiento lógico y estructurado",
+            content: "Fomenta desde pequeños el pensamiento estructurado y metódico."
+        },
+        {
+            title: "Arte y música",
+            content: "Ayuda a desarrollar la creatividad de tus hijos para explotar sus talentos."
+        },
+
+    ])
+
+    const [filterdMaterias, setFilteredMaterias ] = useState(null)
+
+    const filterHandler = ( event ) => {
+        let value = event.target.value.toLowerCase()
+        let filteredMaterias = materias.filter(materia => {
+            return materia.title.toLowerCase().includes(value)
+        })
+
+        setFilteredMaterias(filteredMaterias)
+    }
+
     return (
-
-        <div className="row">
-            <div className="col-md-4 my-5">
-                <MateriaCard 
-                title="Lenguaje y comunicación"
-                content="Fomenta la lectura de tus pequeños a una temprana edad."
-                />
+        <>
+            <div className="row">
+                <div className="col-md-8 offset-md-2">
+                    <SearchBar 
+                    filterH={filterHandler}
+                    />
+                </div>
             </div>
-            <div className="col-md-4 my-5">
-                <MateriaCard 
-                title="Pensamiento lógico"
-                content="Fomenta desde pequeños el pensamiento estructurado y metódico."
-                />
+            <div className="row mb-5">
+                {
+                    filterdMaterias 
+                    ? filterdMaterias.map(materia => {
+                        return (
+                            <div className="col-md-4 my-5">
+                                <MateriaCard
+                                    title={materia.title}
+                                    content={materia.content}
+                                />
+                            </div>
+                        )
+                    })
+                    : materias.map(materia => {
+                        return (
+                            <div className="col-md-4 my-5">
+                                <MateriaCard
+                                    title={materia.title}
+                                    content={materia.content}
+                                />
+                            </div>
+                        )
+                    })
+                }
             </div>
-            <div className="col-md-4 my-5">
-                <MateriaCard 
-                title="Arte y música"
-                content="Ayuda a desarrollar la creatividad de tus hijos para explotar sus talentos."
-                />
-            </div>
-            <div className="col-md-4 my-5">
-                <MateriaCard 
-                title="Arte y música"
-                content="Ayuda a desarrollar la creatividad de tus hijos para explotar sus talentos."
-                />
-            </div>
-            <div className="col-md-4 my-5">
-                <MateriaCard 
-                title="Pensamiento lógico"
-                content="Fomenta desde pequeños el pensamiento estructurado y metódico."
-                />
-            </div>
-            <div className="col-md-4 my-5">
-                <MateriaCard 
-                title="Lenguaje y comunicación"
-                content="Fomenta la lectura de tus pequeños a una temprana edad."
-                />
-            </div>
-        </div>
+        </>
         
     )
 }

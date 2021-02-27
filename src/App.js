@@ -13,6 +13,7 @@ import FooterEducare from './components/footer/footer';
 import Login from './Pages/login';
 import Donar from './Pages/donar';
 import Materias from './Pages/materias';
+import Dashboard from './Pages/dashboard';
 
 class App extends Component {
   constructor() {
@@ -39,8 +40,8 @@ class App extends Component {
                 <Route path="/donacion">
                   <Donar />
                 </Route>
-                <Route path="/catalogo">
-                  <h1>Soy la vista de catalogo</h1>
+                <Route path="/hijo">
+                  <Dashboard />
                 </Route>
                
                 <Route path="/actividades">

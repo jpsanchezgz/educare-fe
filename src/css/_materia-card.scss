@@ -1,5 +1,15 @@
-.card-my {
-    background-color: #EEBD52;
+.materias-body {
+    background-color: whitesmoke;
+    border: 3px solid #EEBD52;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 1.5rem;
+    transition: 0.5s;
+
+    &:hover {
+        transform: scale(1.05);
+        background-color: white;
+    }
 
     .title {
         color: #5AAA94;

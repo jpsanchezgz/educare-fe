@@ -22,7 +22,7 @@ function NavBar () {
           <form className="form-inline my-2 my-lg-0">
             <div className="search-component">
               <input className=" search-input mr-sm-2" type="search" placeholder="Buscador..." aria-label="Search" />
-              <button className="search-button my-2 my-sm-0" type="submit"><FontAwesomeIcon icon={faSearch} ></FontAwesomeIcon></button>
+              <button className="search-button my-2 my-sm-0" type="button"><FontAwesomeIcon icon={faSearch} ></FontAwesomeIcon></button>
             </div>
           </form>
           <ul className="navbar-nav ml-auto">

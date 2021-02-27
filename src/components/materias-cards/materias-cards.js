@@ -1,13 +1,18 @@
 import React from 'react';
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
+import {
+    Link
+} from 'react-router-dom'
 
 function MateriasCard ( props ) {
     return (
-        <Card body style={{ backgroundColor: '#EEBD52' }}>
-            <CardTitle className="text-left title" tag="h3">{props.title}</CardTitle>
-            <CardText className="text-left">{props.content}</CardText>
-            <Button className="text-left button">Ir a actividades --></Button>
-        </Card>
+
+        <Link to="/actividades" style={{ textDecoration: 'none' }}>
+            <div className="materias-body shadow">
+                <CardTitle className="title" tag="h3">{props.title}</CardTitle>
+                <CardText className="">{props.content}</CardText>
+            </div>
+        </Link>
     )
 }
 
