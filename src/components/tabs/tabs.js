@@ -13,15 +13,15 @@ const DBTabs = (props) => {
   return (
     <div>
       <Nav tabs>
-        <NavItem>
+        <NavItem className="tabs-box">
           <NavLink
-            className={classnames({ active: activeTab === '1' })}
+            className={classnames({ active: activeTab === '1', backgroundColor: "red" })}
             onClick={() => { toggle('1'); }}
           >
             Panel
           </NavLink>
         </NavItem>
-        <NavItem>
+        <NavItem className="tabs-box">
           <NavLink
             className={classnames({ active: activeTab === '2' })}
             onClick={() => { toggle('2'); }}
@@ -29,7 +29,7 @@ const DBTabs = (props) => {
             Settings
           </NavLink>
         </NavItem>
-        <NavItem>
+        <NavItem className="tabs-box">
           <NavLink
             className={classnames({ active: activeTab === '3' })}
             onClick={() => { toggle('3'); }}

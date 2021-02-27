@@ -7,7 +7,8 @@
     .container {
       background-color: #E5E5E5;
       border-radius: 25px;
-      padding: 1.5rem;
+      padding: 1.5rem 1rem 0;
+      min-height: calc(100vh - 343px);
     }
   }
  
@@ -79,25 +80,6 @@
   p{
     color: #4D554F;
     font-size: 20px;
-  }
-  
-  .search-component {
-    background-color: #d1e2dc;
-    padding: 5px;
-    border-radius: 25px;
-    width: 100%;
-  }
-  
-  .search-input {
-    border: none;
-    background-color: #d1e2dc;
-    margin-left: 1rem;
-
-  }
-  .search-button {
-    border: none;
-    background-color: #d1e2dc;
-    color: #5AAA94;
   }
   
   

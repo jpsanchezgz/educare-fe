@@ -49,23 +49,23 @@ function Materias ( props ) {
 
     const filterHandler = ( event ) => {
         let value = event.target.value.toLowerCase()
-        let filteredMaterias = materias.filter(materia => {
+        let filteredArrayMaterias = materias.filter(materia => {
             return materia.title.toLowerCase().includes(value)
         })
 
-        setFilteredMaterias(filteredMaterias)
+        setFilteredMaterias(filteredArrayMaterias)
     }
 
     return (
         <>
-            <div className="row">
-                <div className="col-md-8 offset-md-2">
+            <div className="row ml-5">
+                <div className="col-6">
                     <SearchBar 
                     filterH={filterHandler}
                     />
                 </div>
             </div>
-            <div className="row mb-5">
+            <div className="row mb-5 px-5">
                 {
                     filterdMaterias 
                     ? filterdMaterias.map(materia => {

@@ -1,5 +1,9 @@
 .second-row {
     background-color: #f7f7f7;
+    &:last-of-type {
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
 
     .qs-row-1{
         text-align: left;

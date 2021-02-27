@@ -14,6 +14,8 @@ import Login from './Pages/login';
 import Donar from './Pages/donar';
 import Materias from './Pages/materias';
 import Dashboard from './Pages/dashboard';
+import Actividades from './Pages/actividades';
+import Admin from './Pages/admin';
 
 class App extends Component {
   constructor() {
@@ -34,6 +36,9 @@ class App extends Component {
               <NavBar />
 
               <Switch>
+                <Route path="/admin">
+                  <Admin />
+                </Route>
                 <Route path="/materias">
                   <Materias />
                 </Route>
@@ -45,7 +50,10 @@ class App extends Component {
                 </Route>
                
                 <Route path="/actividades">
-                  <h1>Soy la vista de actividades</h1>
+                  <Actividades />
+                </Route>
+                <Route path="/actividades/:id">
+                  <h1>Soy la vista del detalle de la actividad</h1>
                 </Route>
                 <Route path="/signup">
                   <RegistroForm />

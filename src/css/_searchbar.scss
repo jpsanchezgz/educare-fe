@@ -1,19 +1,32 @@
 .search-input-component {
+  background-color: #d1e2dc;
     border: none;
-    background-color: #d1e2dc;
-    margin-left: 1rem;
-    width: 100%;
+    margin-left: -1px;
+    padding: 5px;
+    border-radius: 25px;
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    
+    &:focus {
+      outline: none;
+    }
 }
 
 .search-component-bar {
     background-color: #d1e2dc;
-    padding: 5px;
-    border-radius: 25px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
     width: 100%;
+    border-radius: 25px;
   }
 
   .search-button-component {
     border: none;
     background-color: #d1e2dc;
     color: #5AAA94;
+    border-radius: 25px;
+    
   }
