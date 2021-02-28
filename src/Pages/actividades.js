@@ -15,6 +15,26 @@ function Actividades () {
         setActivitesList( await api.getAllPosts() )
     }, [])
 
+    const deleteActivity = (id) => {
+        fetch(`http://apieducare.mybluemix.net/resources/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzA1ZDAzODM5ZjFmNDI1YTRlYTk4NiIsImlhdCI6MTYxMzc5OTgzMn0.hifm17Knm06wZtjB4WcdwG0EL90g9ndnkgOlkXKsK-U"
+            }
+        }, [])
+        .then( data => {
+            return data.json()
+          })
+          .then( data => {
+            if (data.success) {
+                console.log("Se borró el recurso exitósamente.")
+                window.location.reload()
+            } else {
+              console.error("Error: ", data.error)
+            }
+          })
+    }
+
     const Lectura =  <FontAwesomeIcon icon={faBook} size="2x" color="#3E6C5F"></FontAwesomeIcon>
     return(
         <div className="row">
@@ -49,12 +69,12 @@ function Actividades () {
                                     <strong>{title}</strong>
                                     <span>{notes}</span>
                                 </div>
-                                <div className="px-1">
-                                    <button className="check-icon" type="button">
-                                        <FontAwesomeIcon icon={faTrashAlt} size="1x" color="red"></FontAwesomeIcon>
-                                    </button>
-                                </div>
                             </Link>
+                            <div className="px-1">
+                                <button className="check-icon" type="button" onClick={ () => deleteActivity(_id)}>
+                                    <FontAwesomeIcon icon={faTrashAlt} size="1x" color="red"></FontAwesomeIcon>
+                                </button>
+                            </div>
                         </div>
                     )
                 })
