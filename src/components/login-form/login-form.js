@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react' 
+import { useHistory } from "react-router-dom";
 
 import {
     Link
 } from 'react-router-dom'
 
 function LoginForm ( props ) {
-    const [ user, setUser ] = useState({}) 
+    const [ user, setUser ] = useState({})
+    const history = useHistory(); 
 
     const createLoginHandler = ( event ) => {
         let value = event.target.value
@@ -21,11 +23,18 @@ function LoginForm ( props ) {
         };
 
 
-        fetch('https://ajaxclass-1ca34.firebaseio.com/juanpablo/users.json', requestObject)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                window.location.href = "http://localhost:3000/"
+        fetch('http://apieducare.mybluemix.net/auth/admin/login', requestObject)
+            .then( data => {
+              return data.json();
+            })
+            .then( data => {
+              if (data.success) {
+                console.log(data.data.token);
+                localStorage.setItem("token", data.data.token);
+                history.push("/");
+              } else {
+                console.log("Tus datos son incorrectos.");
+              }
             });
              
     }
