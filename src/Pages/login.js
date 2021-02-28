@@ -16,7 +16,11 @@ function Login ( props ) {
                     <h3>Inicia sesión</h3>
                     <p>Usa tu cuenta que registraste en EduCaré</p>
                 </div>
-                <LoginForm />
+                <LoginForm 
+                createLogingUser={props.createLogingUser}
+                sendLoginUser={props.sendLoginUser}
+                userIncorrect={props.userIncorrect}
+                />
             </div>
           </div>
         

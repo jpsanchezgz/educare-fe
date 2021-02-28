@@ -1,4 +1,5 @@
 import React, {useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import PDF from '../images/Pdf-icon.svg'
 import Video from '../images/Video-icon.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -32,26 +33,28 @@ function Actividades () {
             </div>
             {
                 activitiesList && activitiesList.data.map( actividad => {
-                    let { content_type, title, notes } = actividad
+                    let { content_type, title, notes, _id } = actividad
                     return (
                         <div className="col-12 d-flex align-items-center my-3">
-                            <div className="">
-                                {
-                                    content_type !== "lectura"
-                                        ? <img src={Video} alt="Video icon" width="40"/>
-                                        : Lectura
-                                }
+                            <Link to={`/actividades/?activityId=${_id}`}>
+                                <div className="">
+                                    {
+                                        content_type !== "lectura"
+                                            ? <img src={Video} alt="Video icon" width="40" />
+                                            : Lectura
+                                    }
 
-                            </div>
-                            <div className="d-flex flex-column text-left ml-3">
-                                <strong>{title}</strong>
-                                <span>{notes}</span>
-                            </div>
-                            <div className="px-1">
-                            <button className="check-icon"type="button">
-                            <FontAwesomeIcon icon={faTrashAlt} size="1x" color="red"></FontAwesomeIcon>
-                            </button>
-                        </div>
+                                </div>
+                                <div className="d-flex flex-column text-left ml-3">
+                                    <strong>{title}</strong>
+                                    <span>{notes}</span>
+                                </div>
+                                <div className="px-1">
+                                    <button className="check-icon" type="button">
+                                        <FontAwesomeIcon icon={faTrashAlt} size="1x" color="red"></FontAwesomeIcon>
+                                    </button>
+                                </div>
+                            </Link>
                         </div>
                     )
                 })

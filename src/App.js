@@ -1,9 +1,10 @@
 import './App.css';
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react' 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  useHistory,
   Link
 } from "react-router-dom";
 import RegistroForm from './Pages/signup'
@@ -17,15 +18,50 @@ import Dashboard from './Pages/dashboard';
 import Actividades from './Pages/actividades';
 import Admin from './Pages/admin';
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      firstStae: ""
-    }
+function App () {
+  const [ user, setUser ] = useState({})
+  const [isLogged, setIsLogged] = useState(false)
+  const [userIncorrect, setUserIncorrect] = useState(false)
+  const history = useHistory() 
+
+  const createLoginHandler = ( event ) => {
+      let value = event.target.value
+      let property = event.target.name
+      setUser( {...user, [property] : value} )
+  }
+  
+  const sendLoginHandler = () => {
+      const requestObject = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify( user )
+      };
+
+
+      fetch('http://apieducare.mybluemix.net/auth/admin/login', requestObject)
+          .then( data => {
+            return data.json()
+          })
+          .then( data => {
+            if (data.success) {
+              setIsLogged(true)
+              console.log(data.data.token)
+              localStorage.setItem("token", data.data.token)
+              // history.push("/materias"
+              window.location.href = "http://localhost:3000/"
+            } else {
+              console.log("Tus datos son incorrectos.")
+              setUserIncorrect(true)
+            }
+          })
+           
+  }
+  const logout = () => {
+    setIsLogged(false)
+    localStorage.removeItem("token")
+    window.location.href = "http://localhost:3000/login"
   }
 
-  render() {
     return (
       <Router>
       <div className="App container-fluid">
@@ -33,7 +69,9 @@ class App extends Component {
           <div className="container">
             
 
-              <NavBar />
+              <NavBar 
+              logout={logout}
+              Logged={isLogged}/>
 
               <Switch>
                 <Route path="/admin">
@@ -59,7 +97,11 @@ class App extends Component {
                   <RegistroForm />
                 </Route>
                 <Route path="/login">
-                  <Login />
+                  <Login 
+                  createLogingUser={createLoginHandler}
+                  sendLoginUser={sendLoginHandler}
+                  userIncorrect={userIncorrect}
+                  />
                 </Route>
                 <Route exact path="/">
                   <Home />
@@ -76,7 +118,6 @@ class App extends Component {
       </Router>
       
     );
-  }
 }
 
 export default App;

@@ -11,5 +11,6 @@ export default {
 
         /*regresamos la respuesta de la petición, usando await para esperar que resuelva el método .json()*/
         return await response.json()
-    }
+    },
+    
 }

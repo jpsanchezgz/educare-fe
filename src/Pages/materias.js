@@ -23,7 +23,7 @@ function Materias ( props ) {
             content: "Fomenta la lectura de tus pequeños a una temprana edad."
         },
         {
-            title: "Arte y música",
+            title: "Arte y música II",
             content: "Fomenta desde pequeños el pensamiento estructurado y metódico."
         },
         {
@@ -31,15 +31,15 @@ function Materias ( props ) {
             content: "Ayuda a desarrollar la creatividad de tus hijos para explotar sus talentos."
         },
         {
-            title: "Lenguaje y comunicación",
+            title: "Lenguaje y comunicación II",
             content: "Fomenta la lectura de tus pequeños a una temprana edad."
         },
         {
-            title: "Pensamiento lógico y estructurado",
+            title: "Pensamiento lógico y estructurado II",
             content: "Fomenta desde pequeños el pensamiento estructurado y metódico."
         },
         {
-            title: "Arte y música",
+            title: "Arte y música III",
             content: "Ayuda a desarrollar la creatividad de tus hijos para explotar sus talentos."
         },
 

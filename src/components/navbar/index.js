@@ -9,7 +9,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import logotype from '../../images/EduCare-Text-Logo-200px.svg'
 import SearchBar from '../searchbar/search-bar';
 
-function NavBar () {
+function NavBar (props) {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -33,7 +33,11 @@ function NavBar () {
               <Link to="/actividades" className="nav-link" >Actividades</Link>
             </li>
             <button className="nav-item login-button" type="button">
-              <Link to="/login" className="nav-link" tabindex="-1" aria-disabled="true">Iniciar Sesión</Link>
+              {
+                props.Logged
+                ? <Link to="/login" className="nav-link" tabindex="-1" aria-disabled="true">Iniciar Sesión</Link>
+                : <Link className="nav-link" tabindex="-1" aria-disabled="true" onClick={ props.logout }>Cerrar Sesión</Link>
+              }
             </button>
             <button className="nav-item signup-button" type="button">
               <Link to="/signup" className="text-white nav-link" tabindex="-1" aria-disabled="true">Regístrate</Link>
