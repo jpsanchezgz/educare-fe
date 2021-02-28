@@ -6,7 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBook } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
-import api from '../lib/api'
+import api from '../lib/api';
+import ActivityDetail from './../components/activity-detail/activity';
 
 function Actividades () {
     const [activitiesList, setActivitesList ] = useState(null)
@@ -37,6 +38,8 @@ function Actividades () {
 
     const Lectura =  <FontAwesomeIcon icon={faBook} size="2x" color="#3E6C5F"></FontAwesomeIcon>
     return(
+        <>
+        <ActivityDetail/>
         <div className="row">
             <div className="col-12 col-md-11 text-left offset-1">
                 <h2>Actividades</h2>
@@ -56,7 +59,7 @@ function Actividades () {
                     let { content_type, title, notes, _id } = actividad
                     return (
                         <div className="col-12 d-flex align-items-center my-3">
-                            <Link to={`/actividades/?activityId=${_id}`}>
+                            <Link to={`/actividades/${_id}`}>
                                 <div className="">
                                     {
                                         content_type !== "lectura"
@@ -80,6 +83,7 @@ function Actividades () {
                 })
             }
         </div>
+        </>
     )
 }
 

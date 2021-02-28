@@ -5,7 +5,8 @@ import {
   Switch,
   Route,
   useHistory,
-  Link
+  Link,
+  useParams
 } from "react-router-dom";
 import RegistroForm from './Pages/signup'
 import NavBar from './components/navbar/index'
@@ -17,6 +18,12 @@ import Materias from './Pages/materias';
 import Dashboard from './Pages/dashboard';
 import Actividades from './Pages/actividades';
 import Admin from './Pages/admin';
+import Activity from './components/activity-detail/activity';
+
+function DetailedActivity(){
+  const { id } = useParams();
+  return <Activity id = {id} />
+}
 
 function App () {
   const [ user, setUser ] = useState({})
@@ -86,13 +93,17 @@ function App () {
                 <Route path="/hijo">
                   <Dashboard />
                 </Route>
-               
-                <Route path="/actividades">
+
+                {/* Se tiene que usar exact para que no se sobreescriban las rutas ya que son similares
+                En el/actividades */}                
+                <Route exact path="/actividades">
                   <Actividades />
                 </Route>
-                <Route path="/actividades/:id">
-                  <h1>Soy la vista del detalle de la actividad</h1>
+
+                <Route exact path="/actividades/:id">
+                  <DetailedActivity/>
                 </Route>
+
                 <Route path="/signup">
                   <RegistroForm />
                 </Route>
