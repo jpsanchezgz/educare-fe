@@ -57,8 +57,7 @@ function Actividades () {
     const Lectura =  <FontAwesomeIcon icon={faBook} size="2x" color="#3E6C5F"></FontAwesomeIcon>
 
     return(
-        <>
-        <ActivityDetail/>
+    
         <div className="row">
             <div className="col-12 col-md-11 text-left offset-md-1">
                 <h2>Actividades</h2>
@@ -145,7 +144,7 @@ function Actividades () {
                 }).reverse()
             }
         </div>
-        </>
+
     )
 }
 
