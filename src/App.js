@@ -19,6 +19,7 @@ import Dashboard from './Pages/dashboard';
 import Actividades from './Pages/actividades';
 import Admin from './Pages/admin';
 import Activity from './components/activity-detail/activity';
+import WarningBar from './components/warning-bar/warning-bar';
 
 function DetailedActivity(){
   const { id } = useParams();
@@ -27,7 +28,6 @@ function DetailedActivity(){
 
 function App () {
   const [ user, setUser ] = useState({})
-  const [isLogged, setIsLogged] = useState(false)
   const [userIncorrect, setUserIncorrect] = useState(false)
   const history = useHistory() 
 
@@ -51,7 +51,6 @@ function App () {
           })
           .then( data => {
             if (data.success) {
-              setIsLogged(true)
               console.log(data.data.token)
               localStorage.setItem("token", data.data.token)
               // history.push("/materias"
@@ -61,13 +60,13 @@ function App () {
               setUserIncorrect(true)
             }
           })
-           
   }
   const logout = () => {
-    setIsLogged(false)
     localStorage.removeItem("token")
     window.location.href = "http://localhost:3000/login"
   }
+
+  const token = localStorage.getItem("token")
 
     return (
       <Router>
@@ -78,32 +77,76 @@ function App () {
 
               <NavBar 
               logout={logout}
-              Logged={isLogged}/>
+              />
 
               <Switch>
                 <Route path="/admin">
                   <Admin />
                 </Route>
                 <Route path="/materias">
-                  <Materias />
+                  {
+                    token
+                    ? <Materias />
+                    : <>
+                    <WarningBar 
+                    title="las Materias"/>
+                    <Login 
+                    createLogingUser={createLoginHandler}
+                    sendLoginUser={sendLoginHandler}
+                    userIncorrect={userIncorrect}
+                    /> 
+                    </>
+                  }
                 </Route>
                 <Route path="/donacion">
                   <Donar />
                 </Route>
                 <Route path="/hijo">
-                  <Dashboard />
+                  {
+                    token
+                    ? <Dashboard />
+                    : <Login 
+                    createLogingUser={createLoginHandler}
+                    sendLoginUser={sendLoginHandler}
+                    userIncorrect={userIncorrect}
+                    />
+                  }
+                  
                 </Route>
 
                 {/* Se tiene que usar exact para que no se sobreescriban las rutas ya que son similares
                 En el/actividades */}                
                 <Route exact path="/actividades">
-                  <Actividades />
+                  {
+                    token
+                      ? <Actividades />
+                      :  <>
+                      <WarningBar 
+                      title="las Actividades"/>
+                      <Login 
+                      createLogingUser={createLoginHandler}
+                      sendLoginUser={sendLoginHandler}
+                      userIncorrect={userIncorrect}
+                      /> 
+                      </>
+                  }
                 </Route>
 
                 <Route exact path="/actividades/:id">
-                  <DetailedActivity/>
+                  {
+                    token
+                      ? <DetailedActivity />
+                      : <>
+                      <WarningBar 
+                      title="esta Actividad"/>
+                      <Login 
+                      createLogingUser={createLoginHandler}
+                      sendLoginUser={sendLoginHandler}
+                      userIncorrect={userIncorrect}
+                      /> 
+                      </>
+                  }
                 </Route>
-
                 <Route path="/signup">
                   <RegistroForm />
                 </Route>
@@ -115,7 +158,7 @@ function App () {
                   />
                 </Route>
                 <Route exact path="/">
-                  <Home />
+                  <Home />                
                 </Route>
               </Switch>
 

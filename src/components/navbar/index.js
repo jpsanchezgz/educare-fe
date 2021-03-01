@@ -15,6 +15,8 @@ function NavBar (props) {
 
     const toggle = () => setIsOpen(!isOpen);
 
+    const token = localStorage.getItem("token")
+
     return(
       <nav className="navbar navbar-expand-lg navbar-light navbar-className flex-wrap">
         <Link className="navbar-brand" to="/"><img src={logotype} alt="logotype de EduCaré" width="200" /></Link>
@@ -34,9 +36,9 @@ function NavBar (props) {
             </li>
             <button className="nav-item login-button" type="button">
               {
-                props.Logged
-                ? <Link to="/login" className="nav-link" tabindex="-1" aria-disabled="true">Iniciar Sesión</Link>
-                : <Link className="nav-link" tabindex="-1" aria-disabled="true" onClick={ props.logout }>Cerrar Sesión</Link>
+                token
+                ? <Link className="nav-link" tabindex="-1" aria-disabled="true" onClick={props.logout}>Cerrar Sesión</Link>
+                : <Link to="/login" className="nav-link" tabindex="-1" aria-disabled="true">Iniciar Sesión</Link>
               }
             </button>
             <button className="nav-item signup-button" type="button">
