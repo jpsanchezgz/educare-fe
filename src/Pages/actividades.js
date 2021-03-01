@@ -8,7 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBook } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
-import api from '../lib/api'
+import api from '../lib/api';
+import ActivityDetail from './../components/activity-detail/activity';
 
 function Actividades () {
     const [activitiesList, setActivitesList ] = useState(null)
@@ -39,7 +40,7 @@ function Actividades () {
             headers: {
                 "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzA1ZDAzODM5ZjFmNDI1YTRlYTk4NiIsImlhdCI6MTYxMzc5OTgzMn0.hifm17Knm06wZtjB4WcdwG0EL90g9ndnkgOlkXKsK-U"
             }
-        }, [])
+        })
         .then( data => {
             return data.json()
           })
@@ -56,6 +57,8 @@ function Actividades () {
     const Lectura =  <FontAwesomeIcon icon={faBook} size="2x" color="#3E6C5F"></FontAwesomeIcon>
 
     return(
+        <>
+        <ActivityDetail/>
         <div className="row">
             <div className="col-12 col-md-11 text-left offset-md-1">
                 <h2>Actividades</h2>
@@ -90,7 +93,7 @@ function Actividades () {
                     let { content_type, title, notes, _id } = actividad
                     return (
                         <div className="col-12 d-flex align-items-center justify-content-center flex-wrap my-3">
-                            <Link to={`/actividades/?activityId=${_id}`} style={{ textDecoration: 'none' }} className="activity-detail-Link">
+                            <Link to={`/actividades/${_id}`} style={{ textDecoration: 'none' }} className="activity-detail-Link">
                                 <div className="col-12 d-flex align-items-center my-1">
                                     <div>
                                         {
@@ -117,7 +120,7 @@ function Actividades () {
                     let { content_type, title, notes, _id } = actividad
                     return (
                         <div className="col-12 d-flex align-items-center justify-content-center flex-wrap my-3">
-                            <Link to={`/actividades/?activityId=${_id}`} style={{ textDecoration: 'none' }} className="activity-detail-Link">
+                            <Link to={`/actividades/${_id}`} style={{ textDecoration: 'none' }} className="activity-detail-Link">
                                 <div className="col-12 d-flex align-items-center my-1">
                                     <div>
                                         {
@@ -142,6 +145,7 @@ function Actividades () {
                 }).reverse()
             }
         </div>
+        </>
     )
 }
 
