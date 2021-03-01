@@ -599,4 +599,38 @@ p {
   border: none;
   background-color: #ffffff00;
 }
+
+.activity-detail-Link {
+  color: #4D554F;
+}
+
+.activity-detail-Link:hover {
+  color: green;
+}
+
+.filter-buttons-activities {
+  border: none;
+  background-color: #ffffff00;
+}
+
+Button.btn-standard {
+  border-radius: 25px;
+  border: 2px solid #5AAA94;
+  color: #5AAA94;
+  margin: 10px;
+}
+
+Button.btn-standard:hover {
+  background-color: #5AAA94;
+}
+
+.player-wrapper {
+  position: relative;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 /*# sourceMappingURL=style.css.map */
