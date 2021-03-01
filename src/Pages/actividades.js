@@ -40,7 +40,7 @@ function Actividades () {
             headers: {
                 "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzA1ZDAzODM5ZjFmNDI1YTRlYTk4NiIsImlhdCI6MTYxMzc5OTgzMn0.hifm17Knm06wZtjB4WcdwG0EL90g9ndnkgOlkXKsK-U"
             }
-        }, [])
+        })
         .then( data => {
             return data.json()
           })
@@ -120,7 +120,7 @@ function Actividades () {
                     let { content_type, title, notes, _id } = actividad
                     return (
                         <div className="col-12 d-flex align-items-center justify-content-center flex-wrap my-3">
-                            <Link to={`/actividades/?activityId=${_id}`} style={{ textDecoration: 'none' }} className="activity-detail-Link">
+                            <Link to={`/actividades/${_id}`} style={{ textDecoration: 'none' }} className="activity-detail-Link">
                                 <div className="col-12 d-flex align-items-center my-1">
                                     <div>
                                         {
