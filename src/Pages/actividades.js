@@ -54,7 +54,7 @@ function Actividades () {
           })
     }
 
-    const Lectura =  <FontAwesomeIcon icon={faBook} size="2x" color="#3E6C5F"></FontAwesomeIcon>
+    const Lectura =  <FontAwesomeIcon icon={faBook} size="2x" color="#3BB4CA"></FontAwesomeIcon>
 
     return(
     
@@ -73,12 +73,12 @@ function Actividades () {
             </div>
             <div className="col-12 col-md-3">
                 <button className="filter-buttons-activities" onClick={filterActivitiesHandler}>
-                    <img src={Video} alt="Video icon" name="Video"/>
+                    <img src={Video} alt="Video icon" name="Video" width="100"/>
                 </button>
             </div>
             <div className="col-12 col-md-3">
                 <button className="filter-buttons-activities" onClick={filterActivitiesHandler}>
-                    <img src={PDF} alt="PDF icon" name="PDF"/>
+                    <img src={PDF} alt="PDF icon" name="PDF" width="100"/>
                 </button>
             </div>
             <div className="col-12 col-md-3">

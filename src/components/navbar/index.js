@@ -6,7 +6,7 @@ import {
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import logotype from '../../images/EduCare-Text-Logo-200px.svg'
+import logotype from '../../images/EduCaré-azul-logo.svg'
 import SearchBar from '../searchbar/search-bar';
 
 function NavBar (props) {
@@ -29,21 +29,25 @@ function NavBar (props) {
               <Link to="/" className="nav-link" >Inicio<span className="sr-only">(current)</span></Link>
             </li> */}
             <li className="nav-item">
-              <Link to="/materias" className="nav-link" >Materias</Link>
+              <Link to="/materias" className="nav-link" style={{color: "#3BB4CA"}}>Materias</Link>
             </li>
             <li className="nav-item">
-              <Link to="/actividades" className="nav-link" >Actividades</Link>
+              <Link to="/actividades" className="nav-link" style={{color: "#3BB4CA"}}>Actividades</Link>
             </li>
             <button className="nav-item login-button" type="button">
               {
                 token
-                ? <Link className="nav-link" tabindex="-1" aria-disabled="true" onClick={props.logout}>Cerrar Sesión</Link>
-                : <Link to="/login" className="nav-link" tabindex="-1" aria-disabled="true">Iniciar Sesión</Link>
+                ? <Link className="nav-link" tabindex="-1" aria-disabled="true" onClick={props.logout} style={{color: "#FE8D03"}}>Cerrar Sesión</Link>
+                : <Link to="/login" className="nav-link" tabindex="-1" aria-disabled="true" style={{color: "#FE8D03"}}>Iniciar Sesión</Link>
               }
             </button>
-            <button className="nav-item signup-button" type="button">
-              <Link to="/signup" className="text-white nav-link" tabindex="-1" aria-disabled="true">Regístrate</Link>
-            </button>
+
+            {
+              !token && <button className="nav-item signup-button" type="button">
+                <Link to="/signup" className="text-white nav-link" tabindex="-1" aria-disabled="true" >Regístrate</Link>
+              </button>
+            }
+
           </ul>
         </Collapse>
       </nav>

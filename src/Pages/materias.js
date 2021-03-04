@@ -70,7 +70,7 @@ function Materias ( props ) {
                     filterdMaterias 
                     ? filterdMaterias.map(materia => {
                         return (
-                            <div className="col-md-4 my-5">
+                            <div className="col-lg-4 my-3">
                                 <MateriaCard
                                     title={materia.title}
                                     content={materia.content}
@@ -80,7 +80,7 @@ function Materias ( props ) {
                     })
                     : materias.map(materia => {
                         return (
-                            <div className="col-md-4 my-5">
+                            <div className="col-lg-4 my-3">
                                 <MateriaCard
                                     title={materia.title}
                                     content={materia.content}

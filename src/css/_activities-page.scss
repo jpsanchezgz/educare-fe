@@ -2,7 +2,7 @@
     color: #4D554F;
 
     &:hover {
-        color: green;
+        color: $naranja;
     }
   }
 
@@ -13,11 +13,11 @@
 
   Button.btn-standard{
       border-radius: 25px;
-      border: 2px solid #5AAA94;
-      color: #5AAA94;
+      border: 2px solid $azul;
+      color: $azul;
       margin: 10px;
       &:hover{
-        background-color: #5AAA94;
+        background-color: $azul;
       }
   }
 

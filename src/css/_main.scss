@@ -1,15 +1,16 @@
 .App {
     text-align: center;
-    background-color: #B0B1A9;
+    background-color: $blanco;
     margin: 0%;
     padding: 0%;
+    min-height: calc(100vh - 343px);
     
-    .container {
-      background-color: #E5E5E5;
-      border-radius: 25px;
-      padding: 1.5rem 1rem 0;
-      min-height: calc(100vh - 343px);
-    }
+    // .container {
+    //   background-color: $blanco;
+    //   border-radius: 25px;
+    //   padding: 1.5rem 1rem 0;
+    //   min-height: calc(100vh - 343px);
+    // }
   }
  
   
@@ -21,34 +22,15 @@
     background-color: none;
     height: 7%;
   }
-  
-  .green-circle {
-  
-  width: 15%;
-  height: 40%;
-  
-  position: absolute;
-  /* left: 49.16%;
-  right: -6.16%; */
-  top: 25%;
-  bottom: 0;
-  right: 0;
-  left: 25%;
-  
-  
-  background: rgba(62, 108, 95, 0.1);
-  transform: matrix(0.84, 0.43, -0.6, 0.88, 0, 0);
-  
-  border-radius: 75%;
-  }
+
   .registry-form {
-    color: #5AAA94;
+    color: $naranja;
   }
   
   .form-controle {
-    border: 2px solid #5AAA94;
+    border: 2px solid $naranja;
     border-radius: 8px;
-    color: #5AAA94;
+    color: $naranja;
     width: 100%;
     /* text-align: center; */
     /* text-transform: capitalize; */
@@ -57,13 +39,12 @@
   
   }
   ::placeholder {
-    color: #5AAA94;
+    color: $naranja;
     opacity: 0.65;
   }
   
   .input-1 {
-    background-color: red;
-    border: 2px solid #5AAA94;
+    border: 2px solid $naranja;
     border-radius: 8px;
   }
   .vlc {
@@ -78,14 +59,14 @@
   }
   
   p{
-    color: #4D554F;
+    color: $negro;
     font-size: 20px;
   }
   
   
   .signup-button {
     border: none;
-    background-color: #EEBD52;
+    background-color: $naranja;
     border-radius: 25px;
     box-shadow: 4px 8px 5px #9b9b9b4b;
     color: white;
@@ -95,21 +76,22 @@
     transition: 0.5s;
         
         &:hover {
-            background-color:#947531;
+            background-color:$naranja-hover;
             transform: scale(1.005);
         }
   
   }
   
   .login-button {
-    border: 2px solid #5AAA94;
+    border: 2px solid $naranja;
     border-radius: 25px;
     box-shadow: 4px 8px 5px  #9b9b9b4b;
-    background-color: whitesmoke;
+    background-color: white;
     font-family: 'Roboto', sans-serif;
     margin-left: 5px;
     padding: 0px 20px;
     transition: 0.5s;
+    color: $naranja;
         
         &:hover {
             background-color: rgb(161, 161, 161);
@@ -132,10 +114,16 @@
     font-size: 2rem;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    background-color: #5AAA94;
+    background-color: $naranja;
     color: whitesmoke;
     width: 100%;
     padding: 1rem;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: $naranja-hover;
+      transform: scale(1.005);
+    }
 
      @media screen and (max-width: 320px) {
             width: fit-content;
@@ -145,7 +133,7 @@
   }
 
   .titles {
-    color: #4B8475;
+    color: $negro;
   }
 
   .signup-row {

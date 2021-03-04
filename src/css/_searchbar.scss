@@ -1,5 +1,5 @@
 .search-input-component {
-  background-color: #d1e2dc;
+  background-color: white;
     border: none;
     margin-left: -1px;
     padding: 5px;
@@ -11,10 +11,14 @@
     &:focus {
       outline: none;
     }
+
+    :placeholder-shown{
+      color: yellowgreen;
+    }
 }
 
 .search-component-bar {
-    background-color: #d1e2dc;
+    background-color: white;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -25,8 +29,8 @@
 
   .search-button-component {
     border: none;
-    background-color: #d1e2dc;
-    color: #5AAA94;
+    background-color: white;
+    color: $azul;
     border-radius: 25px;
     
   }
