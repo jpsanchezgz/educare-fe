@@ -3,7 +3,7 @@
     background-color: $blanco;
     margin: 0%;
     padding: 0%;
-    min-height: calc(100vh - 343px);
+    min-height: calc(100vh - 300px);
     
     // .container {
     //   background-color: $blanco;
@@ -13,6 +13,11 @@
     // }
   }
  
+  .registry-span {
+    color: $azul-oscuro;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
   
   .first-home-row {
     height: calc(100vh - 50px);

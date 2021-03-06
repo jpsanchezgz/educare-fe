@@ -18,16 +18,19 @@ function NavBar (props) {
     const token = localStorage.getItem("token")
 
     return(
-      <nav className="navbar navbar-expand-lg navbar-light navbar-className flex-wrap">
+      <nav className="navbar navbar-expand-lg navbar-light navbar-className flex-wrap mb-5">
         <Link className="navbar-brand" to="/"><img src={logotype} alt="logotype de EduCaré" width="200" /></Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           
-          <SearchBar />
+          {/* <SearchBar /> */}
           <ul className="navbar-nav ml-auto">
             {/* <li className="nav-item active">
               <Link to="/" className="nav-link" >Inicio<span className="sr-only">(current)</span></Link>
             </li> */}
+             <li className="nav-item">
+              <Link to="/" className="nav-link" style={{color: "#3BB4CA"}}>Inicio</Link>
+            </li>
             <li className="nav-item">
               <Link to="/materias" className="nav-link" style={{color: "#3BB4CA"}}>Materias</Link>
             </li>
@@ -43,9 +46,13 @@ function NavBar (props) {
             </button>
 
             {
-              !token && <button className="nav-item signup-button" type="button">
-                <Link to="/signup" className="text-white nav-link" tabindex="-1" aria-disabled="true" >Regístrate</Link>
-              </button>
+              token
+              ? <button className="nav-item signup-button" type="button">
+              <Link to="/hijo" className="text-white nav-link" tabindex="-1" aria-disabled="true" >Mi contendio</Link>
+            </button>
+              : <button className="nav-item signup-button" type="button">
+              <Link to="/signup" className="text-white nav-link" tabindex="-1" aria-disabled="true" >Regístrate</Link>
+            </button>
             }
 
           </ul>

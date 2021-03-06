@@ -37,7 +37,8 @@ function RegistryForm ( props ) {
 
     return (
         <form action="registry-form">
-          <div className="form-group">
+          <span className="registry-span">Mis datos</span>
+          <div className="form-group mt-2">
             <input class="form-controle" type="text" placeholder="Nombre" name="name" onChange={createNewUserHandler} />
           </div>
           <div className="form-group">
@@ -49,7 +50,8 @@ function RegistryForm ( props ) {
           <div className="form-group">
             <input class="form-controle" type="password" placeholder="Contraseña" name="password" onChange={createNewUserHandler} />
           </div>
-          <div className="form-group">
+          <span className="registry-span">Datos de mi hijo</span>
+          <div className="form-group mt-2">
             <input class="form-controle" type="date" placeholder="Fecha de nacimiento de tu hijo" name="kidBirthday" onChange={createNewUserHandler} />
           </div>
           <div className="form-group">

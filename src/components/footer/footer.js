@@ -12,7 +12,7 @@ import logo from '../../images/EduCaré-blanco-logo.svg'
 function FooterEducare() {
     return (
         <div className="container-fluid footer-container">
-            <div className="row my-5">
+            <div className="row">
                 <div className="col-md-2">
                     <ul className="text-white pl-0 d-flex flex-column justify-content-evenly">
                         <Link to="/" className="li-footer"><li>Home</li></Link>

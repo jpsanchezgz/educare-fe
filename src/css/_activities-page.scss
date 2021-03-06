@@ -1,14 +1,25 @@
-.activity-detail-Link {
+.activities-card {
+  height: 250px;
+
+  .activity-detail-Link {
     color: #4D554F;
 
     &:hover {
         color: $naranja;
     }
-  }
 
-  .filter-buttons-activities {
-      border: none;
-      background-color: #ffffff00;
+    .activity-title {
+      height: 50px;
+    }
+  }
+}
+
+  .plus-icon {
+    border: none;
+        border-radius: 50%;
+        background-color: $blanco;
+        box-shadow: 2px 2px 5px rgb(185, 185, 185);
+
   }
 
   Button.btn-standard{

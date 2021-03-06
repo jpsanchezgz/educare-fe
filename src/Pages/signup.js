@@ -13,7 +13,7 @@ function Registro ( props ) {
             <div className="col-md-5 p-5 signup-row">
               <div className="">
                 <h2 className="text-left">Regístrate</h2>
-                <p className="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur in porro consectetur. Possimus veniam ratione ex, nobis culpa voluptatum libero, maxime saepe odit corrupti natus.</p>
+                <p className="text-left">Para registrarte necesitas crear tu cuenta llenando este formulario con tu información un par de datos de tu hijo. Después de este paso, podrás acceder al material educativo y sus actividades.</p>
               </div>
               <img className="reg-3d-pic" src={image} alt="asdfasdf" />
             </div>

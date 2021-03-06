@@ -6,25 +6,35 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap';
-import image from '../../images/registry.png';
+import carrousel1 from '../../images/carroussell-1.svg';
+import carrousel2 from '../../images/carroussell-3.svg';
+import carrousel3 from '../../images/testimonio-1.svg';
+import carrousel4 from '../../images/testimonio-2.svg';
+
 
 const items = [
   {
-    src: image,
+    src: carrousel1,
     altText: 'Slide 1',
-    caption: 'Slide 1',
+    caption: '',
     className: 'carousel-picture'
   },
   {
-    src: image,
+    src: carrousel2,
     altText: 'Slide 2',
-    caption: 'Slide 2',
+    caption: '',
     className: 'carousel-picture'
   },
   {
-    src: image,
+    src: carrousel3,
     altText: 'Slide 3',
-    caption: 'Slide 3',
+    caption: '',
+    className: 'carousel-picture'
+  },
+  {
+    src: carrousel4,
+    altText: 'Slide 3',
+    caption: '',
     className: 'carousel-picture'
   }
 ];
@@ -60,7 +70,7 @@ const MyCarousel = (props) => {
       >
         
         <img src={item.src} alt={item.altText} className={item.className} id={item.id} />
-        <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+        <CarouselCaption captionText={item.caption} captionHeader={item.caption} style={{color: "#4D554F"}}/>
       </CarouselItem>
     );
   });
@@ -71,10 +81,10 @@ const MyCarousel = (props) => {
       next={next}
       previous={previous}
     >
-      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} className="CarouselIndicators"/>
       {slides}
-      <CarouselControl id="carousel-control" direction="prev" directionText="Previous" onClickHandler={previous} />
-      <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+      <CarouselControl id="carousel-control" direction="prev" directionText="Previous" onClickHandler={previous} className="CarouselIndicators"/>
+      <CarouselControl direction="next" directionText="Next" onClickHandler={next} className="CarouselIndicators"/>
     </Carousel>
   );
 }

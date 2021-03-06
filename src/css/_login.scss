@@ -19,14 +19,14 @@
         font-size: 1.5rem;
         font-family: 'Roboto', sans-serif;
         font-weight: bold;
-        background-color: #5AAA94;
+        background-color: $naranja;
         color: whitesmoke;
         width: 50%;
         padding: 1.5rem;
         transition: 0.5s;
         
         &:hover {
-            background-color: #305e52;
+            background-color: $naranja-hover;
             transform: scale(1.005);
         }
       

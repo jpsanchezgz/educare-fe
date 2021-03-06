@@ -1,14 +1,29 @@
-.carousel-picture {
-    height: calc(100vh - 100px);
+.carousel-bg {
+    height: 75vh;
     margin: auto;
+
+    @media screen and (min-width: 1440px) {
+        height: 85vh;
+    }
     
     
 }
 
-.carousel-control {
-    background-color: green;
+.carousel-picture {
+
+    @media screen and (max-width: 1024px) {
+        margin-top: 0%;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 0%;
+    }
+
+    @media screen and (max-width: 425px) {
+        margin-top: 15%;
+    }
 }
 
-#carousel-control-prev-icon {
-    background-color: black;;
+.CarouselIndicators {
+    filter: contrast(0%);
 }

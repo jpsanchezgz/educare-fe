@@ -54,7 +54,7 @@ function App() {
           console.log(data.data.token)
           localStorage.setItem("token", data.data.token)
           // history.push("/materias"
-          window.location.href = "http://localhost:3000/"
+          window.location.href = "/actividades"
         } else {
           console.log("Tus datos son incorrectos.")
           setUserIncorrect(true)
@@ -63,7 +63,7 @@ function App() {
   }
   const logout = () => {
     localStorage.removeItem("token")
-    window.location.href = "http://localhost:3000/login"
+    window.location.href = "/login"
   }
 
   const token = localStorage.getItem("token")
