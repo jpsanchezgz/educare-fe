@@ -36,7 +36,8 @@ export default function Activity(props) {
             content_type={content_type}
             link={link}
             />
-            : <PDFDetail
+            : content_type === 'PDF'
+            ? <PDFDetail
             title={title}
             notes={notes}
             tags={tags}
@@ -45,6 +46,7 @@ export default function Activity(props) {
             content_type={content_type}
             link={link}
             />
+            : null
         }
         </>
     )

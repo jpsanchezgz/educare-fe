@@ -35,6 +35,9 @@ function UploadContentForm ( props ) {
                     <option value="Lenguaje y Comunicación">Lenguaje y Comunicación</option>
                     <option value="Arte y Música">Arte y Múscia</option>
                     <option value="Pensamiento Matemático y Lógico">Pensamiento Matemático y Lógico</option>
+                    <option value="Pensamiento lógico y estructurado">Pensamiento lógico y estructurado</option>
+                    <option value="Desarrollo intelectual y cognitivo">Desarrollo intelectual y cognitivo</option>
+                    <option value="Desarrollo emocional y social">Desarrollo emocional y social</option>
                 </select>
           </div>
           <div className="form-group">

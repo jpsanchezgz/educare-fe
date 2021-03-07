@@ -11,18 +11,20 @@ import PaintMusic from '../../images/music-art.png'
 function MateriasCard ( props ) {
     return (
 
-        <Link to="/actividades" style={{ textDecoration: 'none' }}>
-            <div className="materias-body shadow d-flex flex-column justify-content-around align-items-center">
+        // <Link to="/actividades" style={{ textDecoration: 'none' }}>
+        <div className="materias-body shadow d-flex flex-column justify-content-around align-items-center">
+            <button type="button" onClick={props.filterByMateriaHandler} className="icon-materia-button">
                 {
-                    props.title.includes("Lenguaje") ? <img src={Read} alt="PDF icon" width="85" />
-                        : props.title.includes("Arte") ? <img src={PaintMusic} alt="PDF icon" width="85" />
-                            : props.title.includes("Pensamiento") ? <img src={Calc} alt="PDF icon" width="85" />
-                                : <img src={Brain} alt="PDF icon" width="85" />
+                    props.title.includes("Lenguaje") ? <img src={Read} alt="PDF icon" width="85" name={props.title} />
+                        : props.title.includes("Arte") ? <img src={PaintMusic} alt="PDF icon" width="85" name={props.title} />
+                            : props.title.includes("Pensamiento") ? <img src={Calc} alt="PDF icon" width="85" name={props.title} />
+                                : <img src={Brain} alt="PDF icon" width="85" name={props.title} />
                 }
-                <CardTitle className="title mt-2" tag="h3">{props.title}</CardTitle>
-                <CardText className="">{props.content}</CardText>
-            </div>
-        </Link>
+            </button>
+            <CardTitle name={props.title} className="title mt-2" tag="h3">{props.title}</CardTitle>
+            <CardText name={props.title} className="">{props.content}</CardText>
+        </div>
+        // </Link>
     )
 }
 

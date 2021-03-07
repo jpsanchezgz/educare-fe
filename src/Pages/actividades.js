@@ -45,7 +45,7 @@ function Actividades () {
           })
           .then( data => {
             if (data.success) {
-                console.log("Se borró el recurso exitósamente.")
+                console.log("Se borró el recurso exitosamente.")
                 window.location.reload()
             } else {
               console.error("Error: ", data.error)
@@ -67,7 +67,7 @@ function Actividades () {
             {
                 filteredActivitiesList
                 ? filteredActivitiesList.map( actividad => {
-                    let { content_type, title, notes, _id } = actividad
+                    let { content_type, title, notes, _id, category } = actividad
                     return (
                         <div className="col-12 col-md-3 d-flex my-3 activities-card">
                             <Link to={`/actividades/${_id}`} style={{ textDecoration: 'none' }} className="activity-detail-Link">
@@ -82,6 +82,7 @@ function Actividades () {
                                     <div className="d-flex flex-column text-left ml-3">
                                         <strong className="activity-title">{title}</strong>
                                         <span>{notes}</span>
+                                        <small className="mt-3">{category}</small>
                                     </div>
                                 </div>
                             </Link>
@@ -94,7 +95,7 @@ function Actividades () {
                     )
                 }).reverse()
                 : activitiesList && activitiesList.data.map( actividad => {
-                    let { content_type, title, notes, _id } = actividad
+                    let { content_type, title, notes, _id, category } = actividad
                     return (
                         <div className="col-12 col-md-3 d-flex my-3 activities-card">
                             <Link to={`/actividades/${_id}`} style={{ textDecoration: 'none' }} className="activity-detail-Link">
@@ -109,6 +110,7 @@ function Actividades () {
                                     <div className="d-flex flex-column text-left ml-3">
                                         <strong className="activity-title">{title}</strong>
                                         <span>{notes}</span>
+                                        <small className="mt-3">{category}</small>
                                     </div>
                                 </div>
                             </Link>
