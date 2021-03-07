@@ -25,17 +25,23 @@ function NavBar (props) {
           
           {/* <SearchBar /> */}
           <ul className="navbar-nav ml-auto">
-            {/* <li className="nav-item active">
-              <Link to="/" className="nav-link" >Inicio<span className="sr-only">(current)</span></Link>
-            </li> */}
              <li className="nav-item">
               <Link to="/" className="nav-link" style={{color: "#3BB4CA"}}>Inicio</Link>
             </li>
+            {
+              token &&
+              <li className="nav-item">
+                <Link to="/materias" className="nav-link" style={{ color: "#3BB4CA" }}>Materias</Link>
+              </li>
+            }
+            {
+              token &&
+              <li className="nav-item">
+                <Link to="/actividades" className="nav-link" style={{ color: "#3BB4CA" }}>Actividades</Link>
+              </li>
+            }
             <li className="nav-item">
-              <Link to="/materias" className="nav-link" style={{color: "#3BB4CA"}}>Materias</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/actividades" className="nav-link" style={{color: "#3BB4CA"}}>Actividades</Link>
+              <Link to="/donacion" className="nav-link" style={{color: "#3BB4CA"}}>Donación</Link>
             </li>
             <button className="nav-item login-button" type="button">
               {
@@ -48,7 +54,7 @@ function NavBar (props) {
             {
               token
               ? <button className="nav-item signup-button" type="button">
-              <Link to="/hijo" className="text-white nav-link" tabindex="-1" aria-disabled="true" >Mi contendio</Link>
+              <Link to="/hijo" className="text-white nav-link" tabindex="-1" aria-disabled="true" >Mi contenido</Link>
             </button>
               : <button className="nav-item signup-button" type="button">
               <Link to="/signup" className="text-white nav-link" tabindex="-1" aria-disabled="true" >Regístrate</Link>

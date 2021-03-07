@@ -1,3 +1,7 @@
+.actividades-row {
+  padding: 0px 1rem;
+}
+
 .activities-card {
   height: 250px;
 
@@ -22,13 +26,17 @@
 
   }
 
-  Button.btn-standard{
+  Button.butn-standard{
       border-radius: 25px;
       border: 2px solid $azul;
       color: $azul;
       margin: 10px;
+      transition: 0.5s;
+      background-color: whitesmoke;
+
       &:hover{
-        background-color: $azul;
+        background-color: rgb(161, 161, 161);
+        transform: scale(1.005);
       }
   }
 

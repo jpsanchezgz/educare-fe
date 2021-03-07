@@ -2,7 +2,7 @@
     text-align: center;
     background-color: $blanco;
     margin: 0%;
-    padding: 0%;
+    padding: 0px;
     min-height: calc(100vh - 300px);
     
     // .container {
@@ -103,8 +103,8 @@
             transform: scale(1.005);
         }
 
-        @media screen and (max-width: 320px) {
-          margin-bottom: 5px;
+        @media screen and (max-width: 425px) {
+          margin-bottom: 10px;
         }
   
   }
@@ -153,4 +153,21 @@
 
   .reg-3d-pic {
     width: 100%;
+  }
+
+  .round-button {
+    border: none;
+    background-color: $naranja;
+    border-radius: 25px;
+    box-shadow: 4px 8px 5px #9b9b9b4b;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 20px;
+    transition: 0.5s;
+        
+        &:hover {
+            background-color:$naranja-hover;
+            transform: scale(1.05);
+        }
+  
   }

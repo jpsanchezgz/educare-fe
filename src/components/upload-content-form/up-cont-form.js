@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react' 
+import React, { useState, useEffect } from 'react'
+import api from '../../lib/api' 
 
 function UploadContentForm ( props ) {
     const [ newActivity, setNewActivity ] = useState({
@@ -9,30 +10,12 @@ function UploadContentForm ( props ) {
         ],
   }) 
 
+  const token = localStorage.getItem('token')
+
     const createNewActivityHandler = ( event ) => {
         let value = event.target.value
         let property = event.target.name
         setNewActivity( {...newActivity, [property] : value} )
-    }
-    
-    const saveNewActivityHandler = () => {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzA1ZDAzODM5ZjFmNDI1YTRlYTk4NiIsImlhdCI6MTYxMzc5OTgzMn0.hifm17Knm06wZtjB4WcdwG0EL90g9ndnkgOlkXKsK-U"
-             },
-            body: JSON.stringify( newActivity )
-        };
-
-
-        fetch('http://apieducare.mybluemix.net/resources', requestOptions)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                window.location.href = "http://localhost:3000/actividades"
-            });
-             
     }
 
     return (
@@ -50,7 +33,7 @@ function UploadContentForm ( props ) {
                 <select className="form-controle" aria-label="Default select example" name="category" onChange={createNewActivityHandler}>
                     <option selected>Open this select menu</option>
                     <option value="Lenguaje y Comunicación">Lenguaje y Comunicación</option>
-                    <option value="Arte y Múscia">Arte y Múscia</option>
+                    <option value="Arte y Música">Arte y Múscia</option>
                     <option value="Pensamiento Matemático y Lógico">Pensamiento Matemático y Lógico</option>
                 </select>
           </div>
@@ -67,7 +50,7 @@ function UploadContentForm ( props ) {
           </div>
           <button type="button" className="create-user-button" onClick={
               () => {
-                saveNewActivityHandler()
+                api.saveNewActivityHandler(token, newActivity)
               }
           }>¡Subir Actividad!</button>
         </form>

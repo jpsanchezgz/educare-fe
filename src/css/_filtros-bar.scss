@@ -16,5 +16,11 @@
         padding: 1rem;
         background-color: $blanco;
         box-shadow: 5px 5px 10px rgb(185, 185, 185);
+        transition: 0.5s;
+
+        &:hover {
+            transform: scale(1.05);
+            background-color: white;
+        }
     }
 }
