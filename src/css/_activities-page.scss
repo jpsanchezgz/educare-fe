@@ -3,7 +3,11 @@
 }
 
 .activities-card {
-  height: 300px;
+  height: auto;
+
+  @media screen and (max-width: 1440px) {
+    height: auto;
+  }
 
   .activity-detail-Link {
     color: #4D554F;
@@ -14,6 +18,12 @@
 
     .activity-title {
       height: 50px;
+      display: flex;
+      align-items: center;
+      
+      @media screen and (max-width: 1024px) {
+        height: 100px;
+      }
     }
   }
 }
@@ -24,6 +34,26 @@
         background-color: $blanco;
         box-shadow: 2px 2px 5px rgb(185, 185, 185);
 
+  }
+
+  .add-act-button {
+    border: none;
+    border-radius: 25px;
+    box-shadow: 4px 8px 5px  #9b9b9b4b;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 5px 20px;
+    transition: 0.5s;
+    color: $naranja;
+        
+        &:hover {
+            background-color: rgb(161, 161, 161);
+            transform: scale(1.005);
+        }
+
+        @media screen and (max-width: 425px) {
+          margin-bottom: 10px;
+        }
   }
 
   Button.butn-standard{

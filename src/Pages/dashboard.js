@@ -1,18 +1,15 @@
-import DBTabs from '../components/tabs/tabs'
 import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
-import SearchBar from '../components/searchbar/search-bar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCamera } from '@fortawesome/free-solid-svg-icons'
 import DBTable from '../components/db-table/db-table'
 
 
-function Dashboard () {
+function Dashboard ( props ) {
 
     const inputEl = useRef(null)
     
     const onButtonClick = () => {
-        // `current` points to the mounted text input element
         inputEl.current.click()
         console.log(inputEl)
       }
@@ -46,12 +43,10 @@ function Dashboard () {
                 </button>
                 <button className="upImg-button py-2 px-4" type="button" onClick={fileUploadHandler}>Upload</button>
             </div>
-            <div className="col-6 offset-3 my-5">
-                <SearchBar />
-            </div>
             <div className="col-12">
-                {/* <DBTabs /> */}
-                <DBTable />
+                <DBTable 
+                currentUser={props.currentUser}
+                />
             </div>
         </div>
     )

@@ -131,6 +131,7 @@ function Materias(props) {
                     <div className="col-6">
                         <SearchBar
                             filterH={filterHandler}
+                            texto="Busca por nombre de materia..."
                         />
                     </div>
                 </div>

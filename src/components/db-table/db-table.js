@@ -1,68 +1,101 @@
-import React from 'react';
-import ReactSlider from 'react-slider'
+import React, {useState, useEffect} from 'react';
 import { Table } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faVideo } from '@fortawesome/free-solid-svg-icons'
-import { faBook } from '@fortawesome/free-solid-svg-icons'
-import { faFilePdf } from '@fortawesome/free-solid-svg-icons'
+import Video from '../../images/Video-icon-r.svg'
+import Book from '../../images/book-solid.svg'
+import PDF from '../../images/Pdf-icon-a.svg'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt} from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight} from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
+import SearchBar from '../searchbar/search-bar'
 
 const DBTable = (props) => {
+
+  const [filteredActivities, setFilteredActivities] = useState(null)
+
+  const filterHandler = (event) => {
+    let value = event.target.value.toLowerCase()
+    let filteredArrayMaterias = props.currentUser.misActividades.filter(actividad => {
+        return actividad.title.toLowerCase().includes(value)
+    })
+
+    setFilteredActivities(filteredArrayMaterias)
+  }
+
   return (
-    <Table borderless id="db-table">
+    <div>
+      <div className="db-searchbar-container my-5">
+        <SearchBar filterH={filterHandler} texto="Busca por título..."/>
+      </div>
+      <Table borderless id="db-table">
       <thead>
         <tr>
           <th>&nbsp;</th>
-          <th>Mis Actividades</th>
+          <th>Título</th>
           <th>Materia</th>
-          <th>Progreso</th>
+          <th>&nbsp;</th>
           <th>&nbsp;</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row"><FontAwesomeIcon icon={faVideo} color='red' size="2x"></FontAwesomeIcon></th>
-          <td>El abecedario de Otto</td>
-          <td>Lenguaje y Comunicación</td>
-          <td>
-            <ReactSlider
-              className="horizontal-slider"
-              thumbClassName="example-thumb"
-              trackClassName="example-track"
-              renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
-            />
-          </td>
-          <td><button className="check-icon" ><FontAwesomeIcon icon={faCheckCircle} color='green' size="2x"></FontAwesomeIcon></button></td>
-        </tr>
-        <tr>
-          <th scope="row"><FontAwesomeIcon icon={faBook} color='blue' size="2x"></FontAwesomeIcon></th>
-          <td>Jacob la liebre gigante</td>
-          <td>Matemáticas</td>
-          <td>
-            <ReactSlider
-              className="horizontal-slider"
-              thumbClassName="example-thumb"
-              trackClassName="example-track"
-              renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
-            />
-          </td>
-        </tr>
-        <tr>
-          <th scope="row"><FontAwesomeIcon icon={faFilePdf} color='#EEBD52' size="2x"></FontAwesomeIcon></th>
-          <td>Cuando voy a cruzar la calle</td>
-          <td>Desarrollo motriz</td>
-          <td>
-            <ReactSlider
-              className="horizontal-slider"
-              thumbClassName="example-thumb"
-              trackClassName="example-track"
-              renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
-            />
-          </td>
-        </tr>
+        {
+          filteredActivities 
+          ? filteredActivities.map(actividada => {
+            const { title, category, content_type, _id} = actividada
+            return (
+              <tr>
+                <th scope="row">
+                  <Link to={`/actividades/${_id}`} style={{ textDecoration: 'none' }} className="activity-detail-Link">
+                    <button className="plus-icon" type="button">
+                      <FontAwesomeIcon icon={faArrowRight} size="1x" color="#FE8D03"></FontAwesomeIcon>
+                    </button>
+                  </Link>
+                </th>
+                <td>{title}</td>
+                <td>{category}</td>
+                <td className="d-none d-lg-block">
+                  {
+                    content_type === "Lectura" ? <img src={Book} alt="Book icon" width="45" />
+                      : content_type === "Video musical" ? <img src={Video} alt="Video icon" width="45" />
+                        : content_type === "PDF" ? <img src={PDF} alt="PDF icon" width="45" />
+                          : null
+                  }
+                </td>
+                <td><button className="check-icon" ><FontAwesomeIcon icon={faTrashAlt} color='green' size="2x"></FontAwesomeIcon></button></td>
+              </tr>
+            )
+          })
+          : props.currentUser.misActividades &&
+          props.currentUser.misActividades.map(actividada => {
+            const { title, category, content_type, _id} = actividada
+            return (
+              <tr>
+                <th scope="row">
+                  <Link to={`/actividades/${_id}`} style={{ textDecoration: 'none' }} className="activity-detail-Link">
+                    <button className="plus-icon" type="button">
+                      <FontAwesomeIcon icon={faArrowRight} size="1x" color="#FE8D03"></FontAwesomeIcon>
+                    </button>
+                  </Link>
+                </th>
+                <td>{title}</td>
+                <td>{category}</td>
+                <td className="d-none d-lg-block">
+                  {
+                    content_type === "Lectura" ? <img src={Book} alt="Book icon" width="45" />
+                      : content_type === "Video musical" ? <img src={Video} alt="Video icon" width="45" />
+                        : content_type === "PDF" ? <img src={PDF} alt="PDF icon" width="45" />
+                          : null
+                  }
+                </td>
+                <td><button className="check-icon" ><FontAwesomeIcon icon={faTrashAlt} color='green' size="2x"></FontAwesomeIcon></button></td>
+              </tr>
+            )
+          })
+        }
       </tbody>
     </Table>
+    </div>
   );
 }
 

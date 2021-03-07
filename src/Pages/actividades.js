@@ -33,25 +33,7 @@ function Actividades () {
         setFilteredActivitiesList(null)
     }
 
-    const deleteActivity = (id) => {
-        fetch(`http://apieducare.mybluemix.net/resources/${id}`, {
-            method: "DELETE",
-            headers: {
-                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzA1ZDAzODM5ZjFmNDI1YTRlYTk4NiIsImlhdCI6MTYxMzc5OTgzMn0.hifm17Knm06wZtjB4WcdwG0EL90g9ndnkgOlkXKsK-U"
-            }
-        })
-        .then( data => {
-            return data.json()
-          })
-          .then( data => {
-            if (data.success) {
-                console.log("Se borró el recurso exitosamente.")
-                window.location.reload()
-            } else {
-              console.error("Error: ", data.error)
-            }
-          })
-    }
+    const token = localStorage.getItem('token')
 
     return(
     
@@ -69,7 +51,7 @@ function Actividades () {
                 ? filteredActivitiesList.map( actividad => {
                     let { content_type, title, notes, _id, category } = actividad
                     return (
-                        <div className="col-12 col-md-3 d-flex my-3 activities-card">
+                        <div className="col-12 col-lg-3 d-lg-flex my-3 activities-card">
                             <Link to={`/actividades/${_id}`} style={{ textDecoration: 'none' }} className="activity-detail-Link">
                                 <div className="my-1">
                                     <div>
@@ -87,8 +69,11 @@ function Actividades () {
                                 </div>
                             </Link>
                             <div className="px-1">
-                                <button className="plus-icon" type="button" onClick={ () => deleteActivity(_id)}>
+                                <button className="plus-icon d-none d-lg-block" type="button" onClick={ async () => await api.deleteActivity(_id, token)}>
                                     <FontAwesomeIcon icon={faPlus} size="1x" color="#FE8D03"></FontAwesomeIcon>
+                                </button>
+                                <button className="add-act-button d-lg-none mt-3" type="button" onClick={ async () => await api.deleteActivity(_id, token)}>
+                                    Agregar a mis actividades
                                 </button>
                             </div>
                         </div>
@@ -97,7 +82,7 @@ function Actividades () {
                 : activitiesList && activitiesList.data.map( actividad => {
                     let { content_type, title, notes, _id, category } = actividad
                     return (
-                        <div className="col-12 col-md-3 d-flex my-3 activities-card">
+                        <div className="col-12 col-lg-3 d-lg-flex my-3 activities-card">
                             <Link to={`/actividades/${_id}`} style={{ textDecoration: 'none' }} className="activity-detail-Link">
                                 <div className="my-1">
                                     <div>
@@ -115,8 +100,11 @@ function Actividades () {
                                 </div>
                             </Link>
                             <div className="px-1">
-                                <button className="plus-icon" type="button" onClick={ () => deleteActivity(_id)}>
+                                <button className="plus-icon d-none d-lg-block" type="button" onClick={ async () => await api.deleteActivity(_id, token)}>
                                     <FontAwesomeIcon icon={faPlus} size="1x" color="#FE8D03"></FontAwesomeIcon>
+                                </button>
+                                <button className="add-act-button d-lg-none mt-3" type="button" onClick={ async () => await api.deleteActivity(_id, token)}>
+                                    Agregar a mis actividades
                                 </button>
                             </div>
                         </div>

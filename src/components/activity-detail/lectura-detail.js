@@ -25,11 +25,6 @@ export default function LecturaDetail(props) {
                     <br />{props.content}<br />
                 </p>
             </div>
-            <div className="col-12 col-md-3 offset-md-9 d-flex justify-content-end mb-5">
-                <Link to="/actividades" style={{ textDecoration: 'none' }}>
-                    <Button className=" butn-standard" >Regresar</Button>
-                </Link>
-            </div>
         </div>
     )
 }

@@ -4,14 +4,14 @@ import { Media, Button } from 'reactstrap'
 
 export default function VideoDetail ( props ) {
     return(
-        <div className="">
+        <div className="row m-auto">
             <div className="col-12 text-left mb-5">
                 <h6 className="title-activity">{props.category}</h6>
             </div>
             <div className="col-12 mb-5">
                 <h3 className="category-title">{props.title}</h3>
             </div>
-            <Media className=" row d-flex justify-content-center">
+            <Media className=" row d-flex justify-content-center align-items-center">
                 <div className="col-12 col-md-6">
                     <Media center top>
                         {/* <Media object data-src="holder.js/64x64" alt="Generic placeholder image" /> */}
@@ -39,11 +39,6 @@ export default function VideoDetail ( props ) {
                             }
                         </div>
                     </Media>
-                </div>
-                <div className="col-12 col-md-3 offset-md-9 d-flex justify-content-end">
-                    <Link to="/actividades" style={{ textDecoration: 'none' }}>
-                        <Button className=" butn-standard" >Regresar</Button>
-                    </Link>
                 </div>
             </Media>
         </div>

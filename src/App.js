@@ -4,8 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useHistory,
-  Link,
   useParams
 } from "react-router-dom";
 import RegistroForm from './Pages/signup'
@@ -20,6 +18,7 @@ import Actividades from './Pages/actividades';
 import Admin from './Pages/admin';
 import Activity from './components/activity-detail/activity';
 import WarningBar from './components/warning-bar/warning-bar';
+import api from './lib/api'
 
 function DetailedActivity() {
   const { id } = useParams();
@@ -29,7 +28,63 @@ function DetailedActivity() {
 function App() {
   const [user, setUser] = useState({})
   const [userIncorrect, setUserIncorrect] = useState(false)
-  const history = useHistory()
+  const [currentUser, setCurrentUser] = useState({
+    id: "1",
+    name: "Jp",
+    kidName: "Gordito",
+    misActividades: [
+      {
+        tags: ["abecedario", "números", "letras"],
+        _id: "60442633318ffa0085227183",
+        title: "Caperuzita Roja",
+        notes: "Favor de leer este cuento antes de comer. Jugar a interpretar los roles",
+        content: "Había una vez una dulce...",
+        category: "Pensamiento lógico y estructurado",
+        content_type: "Lectura",
+        __v: 0
+      },
+      {
+        tags: ["abecedario", "números", "letras"],
+        _id: "60442633318ffa0085227183",
+        title: "Los tres osos",
+        notes: "Favor de leer este cuento antes de comer. Jugar a interpretar los roles",
+        content: "Había una vez una dulce...",
+        category: "Pensamiento lógico y estructurado",
+        content_type: "Lectura",
+        __v: 0
+      },
+      {
+        tags: ["abecedario", "números", "letras"],
+        _id: "60442633318ffa0085227183",
+        title: "La malvada dragona",
+        notes: "Favor de leer este cuento antes de comer. Jugar a interpretar los roles",
+        content: "Había una vez una dulce...",
+        category: "Pensamiento lógico y estructurado",
+        content_type: "PDF",
+        __v: 0
+      },
+      {
+        tags: ["abecedario", "números", "letras"],
+        _id: "60442633318ffa0085227183",
+        title: "Cantando y bailando",
+        notes: "Favor de leer este cuento antes de comer. Jugar a interpretar los roles",
+        content: "Había una vez una dulce...",
+        category: "Pensamiento lógico y estructurado",
+        content_type: "PDF",
+        __v: 0
+      },
+      {
+        tags: ["abecedario", "números", "letras"],
+        _id: "60442633318ffa0085227183",
+        title: "Meditaciones con Willy",
+        notes: "Favor de leer este cuento antes de comer. Jugar a interpretar los roles",
+        content: "Había una vez una dulce...",
+        category: "Pensamiento lógico y estructurado",
+        content_type: "Video musical",
+        __v: 0
+      },
+    ]
+  })
 
   const createLoginHandler = (event) => {
     let value = event.target.value
@@ -37,30 +92,6 @@ function App() {
     setUser({ ...user, [property]: value })
   }
 
-  const sendLoginHandler = () => {
-    const requestObject = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(user)
-    };
-
-
-    fetch('http://apieducare.mybluemix.net/auth/user/login', requestObject)
-      .then(data => {
-        return data.json()
-      })
-      .then(data => {
-        if (data.success) {
-          console.log(data.data.token)
-          localStorage.setItem("token", data.data.token)
-          // history.push("/materias"
-          window.location.href = "/actividades"
-        } else {
-          console.log("Tus datos son incorrectos.")
-          setUserIncorrect(true)
-        }
-      })
-  }
   const logout = () => {
     localStorage.removeItem("token")
     window.location.href = "/login"
@@ -88,7 +119,9 @@ function App() {
                     title="las Materias" />
                   <Login
                     createLogingUser={createLoginHandler}
-                    sendLoginUser={sendLoginHandler}
+                    sendLoginUser={async () => {
+                      await api.sendLoginHandler(user, setUserIncorrect);
+                    }}
                     userIncorrect={userIncorrect}
                   />
                 </>
@@ -100,10 +133,14 @@ function App() {
           <Route path="/hijo">
             {
               token
-                ? <Dashboard />
+                ? <Dashboard 
+                  currentUser={currentUser}
+                />
                 : <Login
                   createLogingUser={createLoginHandler}
-                  sendLoginUser={sendLoginHandler}
+                  sendLoginUser={async () => {
+                    await api.sendLoginHandler(user, setUserIncorrect);
+                  }}
                   userIncorrect={userIncorrect}
                 />
             }
@@ -121,7 +158,9 @@ function App() {
                     title="las Actividades" />
                   <Login
                     createLogingUser={createLoginHandler}
-                    sendLoginUser={sendLoginHandler}
+                    sendLoginUser={async () => {
+                      await api.sendLoginHandler(user, setUserIncorrect);
+                    }}
                     userIncorrect={userIncorrect}
                   />
                 </>
@@ -137,7 +176,9 @@ function App() {
                     title="esta Actividad" />
                   <Login
                     createLogingUser={createLoginHandler}
-                    sendLoginUser={sendLoginHandler}
+                    sendLoginUser={async () => {
+                      await api.sendLoginHandler(user, setUserIncorrect);
+                    }}
                     userIncorrect={userIncorrect}
                   />
                 </>
@@ -149,7 +190,9 @@ function App() {
           <Route path="/login">
             <Login
               createLogingUser={createLoginHandler}
-              sendLoginUser={sendLoginHandler}
+              sendLoginUser={async () => {
+                await api.sendLoginHandler(user, setUserIncorrect);
+              }}
               userIncorrect={userIncorrect}
             />
           </Route>
