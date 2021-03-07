@@ -45,7 +45,7 @@ function App() {
     };
 
 
-    fetch('http://apieducare.mybluemix.net/auth/admin/login', requestObject)
+    fetch('http://apieducare.mybluemix.net/auth/user/login', requestObject)
       .then(data => {
         return data.json()
       })

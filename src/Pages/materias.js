@@ -80,8 +80,9 @@ function Materias(props) {
 
         setFilteredMaterias(filteredArrayMaterias)
     }
-    const getAllActivitiesHandler = () => {
+    const goBackHandler = () => {
         setFilteredActivitiesList(null)
+        setFilteredMaterias(null)
     }
 
     return (
@@ -89,7 +90,7 @@ function Materias(props) {
             ? <>
                 <div className="col-12 col-md-5 d-flex mb-5">
                     <Link to="/materias" style={{ textDecoration: 'none' }}>
-                        <Button className=" butn-standard" onClick={getAllActivitiesHandler}>Regresar</Button>
+                        <Button className=" butn-standard" onClick={goBackHandler}>Regresar</Button>
                     </Link>
                 </div>
                 <div className="row actividades-row">
