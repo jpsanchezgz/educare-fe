@@ -1,0 +1,5 @@
+applications:
+- name: educare
+  memory: 128M
+  stack: cflinuxfs3
+  buildpack: nodejs_buildpack

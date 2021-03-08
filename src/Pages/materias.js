@@ -63,13 +63,14 @@ function Materias(props) {
 
     const filterByMateriaHandler = (event) => {
         let value = event.target.name.toLowerCase()
-        let filteredArrayActivities = activitiesList.data.filter(activity => {
-            return activity.category.toLowerCase().includes(value)
-        })
-
-        setFilteredActivitiesList(filteredArrayActivities)
-        console.log(value)
-        console.log(filteredActivitiesList)
+        if(activitiesList) {
+            let filteredArrayActivities = activitiesList.data.filter(activity => {
+                return activity.category.toLowerCase().includes(value)
+            })
+            setFilteredActivitiesList(filteredArrayActivities)
+            console.log(value)
+            console.log(filteredActivitiesList)
+        }
     }
 
     const filterHandler = (event) => {
