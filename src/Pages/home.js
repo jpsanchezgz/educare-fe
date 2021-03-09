@@ -31,7 +31,7 @@ function Home () {
                     <Link to="/actividades" style={{textDecoration: "none"}}><MainButton name="Comprensión natural y social"/></Link>
                 </div>
                 <div className="col-12 col-md-6 bwwpCol">
-                    <img src={bwwpImage} alt="" className="bwwp"/>
+                    <img src={bwwpImage} alt="woman icon" className="bwwp" />
                 </div>
             </div>
         

@@ -6,7 +6,7 @@ import {
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import logotype from '../../images/EduCaré-azul-logo.svg'
+import logotype from '../../images/EduCare-Blue Text Logo.svg'
 import SearchBar from '../searchbar/search-bar';
 
 function NavBar (props) {

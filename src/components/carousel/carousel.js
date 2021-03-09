@@ -6,10 +6,10 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap';
-import carrousel1 from '../../images/carroussell-1.svg';
-import carrousel2 from '../../images/carroussell-3.svg';
-import carrousel3 from '../../images/testimonio-1.svg';
-import carrousel4 from '../../images/testimonio-2.svg';
+import carrousel1 from '../../images/carroussell-1.png';
+import carrousel2 from '../../images/carroussell-3.png';
+import carrousel3 from '../../images/testimonio-1.png';
+import carrousel4 from '../../images/testimonio-2.png';
 
 
 const items = [

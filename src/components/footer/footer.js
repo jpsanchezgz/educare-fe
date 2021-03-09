@@ -7,12 +7,12 @@ import twicon from '../../images/Twitter-icon-white.svg'
 import gHicon from '../../images/Github-icon-white.svg'
 import donatesvg from '../../images/PayPal-Donate 1.svg'
 import DonateButton from '../papyal-button/donate-button'
-import logo from '../../images/EduCaré-blanco-logo.svg'
+import logo from '../../images/EduCare-White-Blue-Logo 1.svg'
 
 function FooterEducare() {
     return (
         <div className="container-fluid footer-container">
-            <div className="row">
+            <div className="row p-3">
                 <div className="col-md-2">
                     <ul className="text-white pl-0 d-flex flex-column justify-content-evenly">
                         <Link to="/" className="li-footer"><li>Home</li></Link>

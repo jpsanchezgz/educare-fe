@@ -20,7 +20,7 @@ export default function LecturaDetail(props) {
                     props.tags && props.tags.map(tag => <strong>#{tag} </strong>)
                 }
             </div>
-            <div className="col-12 col-md-8 offset-md-2 lectura-content-col my-5 overflow-auto text-left">
+            <div className="col-12 col-md-10 offset-md-1 lectura-content-col my-5 overflow-auto text-left">
                 <p>
                     <br />{props.content}<br />
                 </p>

@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react'
-
 import MateriaCard from '../components/materias-cards/materias-cards'
 import SearchBar from '../components/searchbar/search-bar'
 import api from '../lib/api'
 import { Link } from 'react-router-dom'
 import { Button } from 'reactstrap'
-import PDF from '../images/Pdf-icon.svg'
-import Video from '../images/Video-icon.svg'
-import Book from '../images/book-solid.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import ActivityCard from '../components/activity-card/activity-card'
 
 
 function Materias(props) {
@@ -98,29 +93,13 @@ function Materias(props) {
                 {filteredActivitiesList.map(actividad => {
                     let { content_type, title, notes, _id, category } = actividad
                     return (
-                        <div className="col-12 col-md-3 d-flex my-3 activities-card">
-                            <Link to={`/actividades/${_id}`} style={{ textDecoration: 'none' }} className="activity-detail-Link">
-                                <div className="my-1">
-                                    <div>
-                                        {
-                                            content_type === "Lectura" ? <img src={Book} alt="PDF icon" width="100" />
-                                                : content_type === "Video musical" ? <img src={Video} alt="PDF icon" width="100" />
-                                                    : <img src={PDF} alt="PDF icon" width="100" />
-                                        }
-                                    </div>
-                                    <div className="d-flex flex-column text-left ml-3">
-                                        <strong className="activity-title">{title}</strong>
-                                        <span>{notes}</span>
-                                        <small className="mt-3">{category}</small>
-                                    </div>
-                                </div>
-                            </Link>
-                            <div className="px-1">
-                                <button className="plus-icon" type="button" onClick={ async () => await api.addActivityToMyContentHandler(props.token , _id)}>
-                                    <FontAwesomeIcon icon={faPlus} size="1x" color="#FE8D03"></FontAwesomeIcon>
-                                </button>
-                            </div>
-                        </div>
+                        <ActivityCard 
+                        content_type={content_type}
+                        category={category}
+                        title={title}
+                        notes={notes}
+                        _id={_id}
+                        />
                     )
                 })
                 }

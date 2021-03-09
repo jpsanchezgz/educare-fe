@@ -136,7 +136,7 @@ export default {
             })
     },
 
-    async addActivityToMyContentHandler(token, activityId) {
+    async addActivityToMyContentHandler(token, activityId, callback) {
         const requestObject = {
             method: 'POST',
             headers: { 
@@ -154,6 +154,7 @@ export default {
             .then(data => {
                 if (data.success) {
                     console.log(data.data)
+                    callback()
                 } else {
                     console.error("Error: ", data.error)
                 }

@@ -1,13 +1,22 @@
-.actividades-row {
-  padding: 0px 1rem;
-}
 
 .activities-card {
   height: auto;
+  border: 3px solid $azul;
+  background-color: white;
+  padding: 1.5rem;
+  margin: 1rem;
+  border-radius: 25px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+  transition: 0.5s;
 
-  @media screen and (max-width: 1440px) {
-    height: auto;
+  &:hover{
+    transform: scale(1.05);
   }
+
 
   .activity-detail-Link {
     color: #4D554F;
@@ -16,15 +25,19 @@
         color: $naranja;
     }
 
-    .activity-title {
-      height: 50px;
-      display: flex;
-      align-items: center;
+    // .activity-detail-Link-inside {
+    //   @media screen and (min-width: 1024px) {
+    //     height: 300px;
+    //   }
       
-      @media screen and (max-width: 1024px) {
-        height: 100px;
-      }
-    }
+    // }
+
+    // .activity-title {
+      
+    //   // @media screen and (min-width: 1024px) {
+    //   //   height: 50px;
+    //   // }
+    // }
   }
 }
 

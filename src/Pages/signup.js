@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import RegistryForm from '../components/registro-form/index'
 
 function Registro ( props ) {
-    const [newState, setNewState ] = useState({})
     return(
       
         <>

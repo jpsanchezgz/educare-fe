@@ -1,8 +1,5 @@
 import React from 'react';
 import {CardTitle, CardText } from 'reactstrap';
-import {
-    Link
-} from 'react-router-dom'
 import Brain from '../../images/brain-solid.svg'
 import Read from '../../images/readme-brands.svg'
 import Calc from '../../images/calculator-solid.svg'
@@ -10,8 +7,6 @@ import PaintMusic from '../../images/music-art.png'
 
 function MateriasCard ( props ) {
     return (
-
-        // <Link to="/actividades" style={{ textDecoration: 'none' }}>
         <div className="materias-body shadow d-flex flex-column justify-content-around align-items-center">
             <button type="button" onClick={props.filterByMateriaHandler} className="icon-materia-button">
                 {
@@ -24,7 +19,6 @@ function MateriasCard ( props ) {
             <CardTitle name={props.title} className="title mt-2" tag="h3">{props.title}</CardTitle>
             <CardText name={props.title} className="">{props.content}</CardText>
         </div>
-        // </Link>
     )
 }
 
