@@ -1,11 +1,11 @@
 export default {
     /*Creamos las funciones para cada petición, estas funciones son asíncronas puesto que fetch nos devolverá una promesa que debemos esperar a que sea resuelta*/
 
-    async getAllPosts() {
+    async getAllActivities( token ) {
         /*creamos una variable para almacenar la respuesta de la promesa, usamos await para esperar a que la promesa se resuelva*/
         const response = await fetch(`http://apieducare.mybluemix.net/resources`, {
             headers: {
-                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzA1ZDAzODM5ZjFmNDI1YTRlYTk4NiIsImlhdCI6MTYxMzc5OTgzMn0.hifm17Knm06wZtjB4WcdwG0EL90g9ndnkgOlkXKsK-U"
+                "Authorization": token
             }
         })
 
@@ -46,7 +46,7 @@ export default {
             .then(response => response.json())
             .then(data => {
                 console.log(data)
-                window.location.href = "http://localhost:3000/actividades"
+                window.location.href = "/actividades"
             });
 
     },
@@ -93,6 +93,71 @@ export default {
               console.error("Error: ", data.error)
             }
           })
-    }
+    },
+
+    async saveNewUserHandler( newUser ) {
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify( newUser )
+        };
+
+
+        await fetch('http://apieducare.mybluemix.net/auth/user/signup', requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                window.location.href = "/login"
+            });
+             
+    },
+
+    async getUserInfoHandler(token, callback) {
+        const requestObject = {
+            method: 'GET',
+            headers: { 
+                'Content-Type': 'application/json',
+                "Authorization": token
+            }
+        };
+
+
+        await fetch('http://apieducare.mybluemix.net/users/tracking', requestObject)
+            .then(data => {
+                return data.json()
+            })
+            .then(data => {
+                if (data.success) {
+                    console.log(data.data)
+                    callback(data.data)
+                } else {
+                    console.error("Error: ", data.error)
+                }
+            })
+    },
+
+    async addActivityToMyContentHandler(token, activityId) {
+        const requestObject = {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                "Authorization": token
+            },
+            body: JSON.stringify({"resource_id": activityId})
+        };
+
+
+        await fetch('http://apieducare.mybluemix.net/users/tracking', requestObject)
+            .then(data => {
+                return data.json()
+            })
+            .then(data => {
+                if (data.success) {
+                    console.log(data.data)
+                } else {
+                    console.error("Error: ", data.error)
+                }
+            })
+    },
 
 }

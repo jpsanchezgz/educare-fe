@@ -6,6 +6,7 @@ import Book from '../../images/book-solid.svg'
 import PDF from '../../images/Pdf-icon-a.svg'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { faTrashAlt} from '@fortawesome/free-solid-svg-icons'
+import { faQuestion} from '@fortawesome/free-solid-svg-icons'
 import { faArrowRight} from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import SearchBar from '../searchbar/search-bar'
@@ -16,8 +17,9 @@ const DBTable = (props) => {
 
   const filterHandler = (event) => {
     let value = event.target.value.toLowerCase()
-    let filteredArrayMaterias = props.currentUser.misActividades.filter(actividad => {
-        return actividad.title.toLowerCase().includes(value)
+    let filteredArrayMaterias = props.currentUser.filter(actividad => {
+        if(!actividad.resource){return}
+        return actividad.resource.title.toLowerCase().includes(value)
     })
 
     setFilteredActivities(filteredArrayMaterias)
@@ -41,8 +43,9 @@ const DBTable = (props) => {
       <tbody>
         {
           filteredActivities 
-          ? filteredActivities.map(actividada => {
-            const { title, category, content_type, _id} = actividada
+          ? filteredActivities.map(actividad => {
+            if(!actividad.resource){return}
+            const { title, category, content_type, _id} = actividad.resource
             return (
               <tr>
                 <th scope="row">
@@ -57,18 +60,19 @@ const DBTable = (props) => {
                 <td className="d-none d-lg-block">
                   {
                     content_type === "Lectura" ? <img src={Book} alt="Book icon" width="45" />
-                      : content_type === "Video musical" ? <img src={Video} alt="Video icon" width="45" />
+                      : content_type === "Video musical" || content_type === "Video" ? <img src={Video} alt="Video icon" width="45" />
                         : content_type === "PDF" ? <img src={PDF} alt="PDF icon" width="45" />
-                          : null
+                          : <FontAwesomeIcon icon={faQuestion} size="1x"></FontAwesomeIcon>
                   }
                 </td>
                 <td><button className="check-icon" ><FontAwesomeIcon icon={faTrashAlt} color='green' size="2x"></FontAwesomeIcon></button></td>
               </tr>
             )
           })
-          : props.currentUser.misActividades &&
-          props.currentUser.misActividades.map(actividada => {
-            const { title, category, content_type, _id} = actividada
+          : props.currentUser ?
+          props.currentUser.map(item => {
+            if(!item.resource){return}
+            const {title, category, content_type, _id} = item.resource
             return (
               <tr>
                 <th scope="row">
@@ -83,15 +87,16 @@ const DBTable = (props) => {
                 <td className="d-none d-lg-block">
                   {
                     content_type === "Lectura" ? <img src={Book} alt="Book icon" width="45" />
-                      : content_type === "Video musical" ? <img src={Video} alt="Video icon" width="45" />
+                      : content_type === "Video musical" || content_type === "Video" ? <img src={Video} alt="Video icon" width="45" />
                         : content_type === "PDF" ? <img src={PDF} alt="PDF icon" width="45" />
-                          : null
+                          : <FontAwesomeIcon icon={faQuestion} size="1x"></FontAwesomeIcon>
                   }
                 </td>
                 <td><button className="check-icon" ><FontAwesomeIcon icon={faTrashAlt} color='green' size="2x"></FontAwesomeIcon></button></td>
               </tr>
             )
           })
+          : <p>Usted no tiene actividades guardadas</p>
         }
       </tbody>
     </Table>

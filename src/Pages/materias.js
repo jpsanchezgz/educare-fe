@@ -58,7 +58,7 @@ function Materias(props) {
     const [filteredActivitiesList, setFilteredActivitiesList] = useState(null)
 
     useEffect(async () => {
-        setActivitesList(await api.getAllPosts())
+        setActivitesList(await api.getAllActivities(props.token))
     }, [])
 
     const filterByMateriaHandler = (event) => {
@@ -116,7 +116,7 @@ function Materias(props) {
                                 </div>
                             </Link>
                             <div className="px-1">
-                                <button className="plus-icon" type="button">
+                                <button className="plus-icon" type="button" onClick={ async () => await api.addActivityToMyContentHandler(props.token , _id)}>
                                     <FontAwesomeIcon icon={faPlus} size="1x" color="#FE8D03"></FontAwesomeIcon>
                                 </button>
                             </div>

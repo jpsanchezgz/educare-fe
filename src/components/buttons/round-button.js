@@ -1,6 +1,6 @@
 function RoundButton (props) {
     return(
-    <button className="round-button">{props.name}</button>
+    <button className="round-button mt-3">{props.name}</button>
     )
 }
 

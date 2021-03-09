@@ -10,12 +10,13 @@ import api from '../lib/api';
 import ActivityDetail from './../components/activity-detail/activity';
 import FiltroBar from '../components/filtros-bar/filtros-bar'
 
-function Actividades () {
+function Actividades ( props ) {
     const [activitiesList, setActivitesList ] = useState(null)
     const [filteredActivitiesList, setFilteredActivitiesList ] = useState(null)
 
+
     useEffect( async () => {
-        setActivitesList( await api.getAllPosts() )
+        setActivitesList( await api.getAllActivities(props.token) )
     }, [])
 
     const filterActivitiesHandler = (event) => {
@@ -32,8 +33,6 @@ function Actividades () {
     const getAllActivitiesHandler = () => {
         setFilteredActivitiesList(null)
     }
-
-    const token = localStorage.getItem('token')
 
     return(
     
@@ -57,7 +56,7 @@ function Actividades () {
                                     <div>
                                         {
                                             content_type === "Lectura" ? <img src={Book} alt="PDF icon" width="100"/>
-                                            : content_type === "Video musical" ? <img src={Video} alt="PDF icon" width="100"/>
+                                            : content_type === "Video musical" || content_type === "Video" ? <img src={Video} alt="PDF icon" width="100"/>
                                             : <img src={PDF} alt="PDF icon" width="100"/>
                                         }
                                     </div>
@@ -69,10 +68,10 @@ function Actividades () {
                                 </div>
                             </Link>
                             <div className="px-1">
-                                <button className="plus-icon d-none d-lg-block" type="button" onClick={ async () => await api.deleteActivity(_id, token)}>
+                                <button className="plus-icon d-none d-lg-block" type="button" onClick={ async () => await api.addActivityToMyContentHandler(props.token , _id)}>
                                     <FontAwesomeIcon icon={faPlus} size="1x" color="#FE8D03"></FontAwesomeIcon>
                                 </button>
-                                <button className="add-act-button d-lg-none mt-3" type="button" onClick={ async () => await api.deleteActivity(_id, token)}>
+                                <button className="add-act-button d-lg-none mt-3" type="button" onClick={ async () => await api.addActivityToMyContentHandler(props.token , _id)}>
                                     Agregar a mis actividades
                                 </button>
                             </div>
@@ -88,7 +87,7 @@ function Actividades () {
                                     <div>
                                         {
                                             content_type === "Lectura" ? <img src={Book} alt="PDF icon" width="100"/>
-                                            : content_type === "Video musical" ? <img src={Video} alt="PDF icon" width="100"/>
+                                            : content_type === "Video musical" || content_type === "Video" ? <img src={Video} alt="PDF icon" width="100"/>
                                             : <img src={PDF} alt="PDF icon" width="100"/>
                                         }
                                     </div>
@@ -100,10 +99,10 @@ function Actividades () {
                                 </div>
                             </Link>
                             <div className="px-1">
-                                <button className="plus-icon d-none d-lg-block" type="button" onClick={ async () => await api.deleteActivity(_id, token)}>
+                                <button className="plus-icon d-none d-lg-block" type="button" onClick={ async () => await api.addActivityToMyContentHandler(props.token , _id)}>
                                     <FontAwesomeIcon icon={faPlus} size="1x" color="#FE8D03"></FontAwesomeIcon>
                                 </button>
-                                <button className="add-act-button d-lg-none mt-3" type="button" onClick={ async () => await api.deleteActivity(_id, token)}>
+                                <button className="add-act-button d-lg-none mt-3" type="button" onClick={ async () => await api.addActivityToMyContentHandler(props.token , _id)}>
                                     Agregar a mis actividades
                                 </button>
                             </div>

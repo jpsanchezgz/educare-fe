@@ -54,7 +54,7 @@ function NavBar (props) {
             {
               token
               ? <button className="nav-item signup-button" type="button">
-              <Link to="/hijo" className="text-white nav-link" tabindex="-1" aria-disabled="true" >Mi contenido</Link>
+              <Link to="/hijo" className="text-white nav-link" tabindex="-1" aria-disabled="true" onClick={props.getUserInfoHandler}>Mi contenido</Link>
             </button>
               : <button className="nav-item signup-button" type="button">
               <Link to="/signup" className="text-white nav-link" tabindex="-1" aria-disabled="true" >Regístrate</Link>

@@ -51,7 +51,6 @@ export default function PDFDetail(props) {
                     href="https://i.pinimg.com/originals/bb/f7/9a/bbf79a239b8f4261339469c6d371e205.jpg"
                     style={{ textDecoration: 'none' }}
                     download>
-                    <MainButton name="Descargar" width="50"/>
                     <RoundButton name="Descargar"/>
                 </a>
             </div>

@@ -28,63 +28,7 @@ function DetailedActivity() {
 function App() {
   const [user, setUser] = useState({})
   const [userIncorrect, setUserIncorrect] = useState(false)
-  const [currentUser, setCurrentUser] = useState({
-    id: "1",
-    name: "Jp",
-    kidName: "Gordito",
-    misActividades: [
-      {
-        tags: ["abecedario", "números", "letras"],
-        _id: "60442633318ffa0085227183",
-        title: "Caperuzita Roja",
-        notes: "Favor de leer este cuento antes de comer. Jugar a interpretar los roles",
-        content: "Había una vez una dulce...",
-        category: "Pensamiento lógico y estructurado",
-        content_type: "Lectura",
-        __v: 0
-      },
-      {
-        tags: ["abecedario", "números", "letras"],
-        _id: "60442633318ffa0085227183",
-        title: "Los tres osos",
-        notes: "Favor de leer este cuento antes de comer. Jugar a interpretar los roles",
-        content: "Había una vez una dulce...",
-        category: "Pensamiento lógico y estructurado",
-        content_type: "Lectura",
-        __v: 0
-      },
-      {
-        tags: ["abecedario", "números", "letras"],
-        _id: "60442633318ffa0085227183",
-        title: "La malvada dragona",
-        notes: "Favor de leer este cuento antes de comer. Jugar a interpretar los roles",
-        content: "Había una vez una dulce...",
-        category: "Pensamiento lógico y estructurado",
-        content_type: "PDF",
-        __v: 0
-      },
-      {
-        tags: ["abecedario", "números", "letras"],
-        _id: "60442633318ffa0085227183",
-        title: "Cantando y bailando",
-        notes: "Favor de leer este cuento antes de comer. Jugar a interpretar los roles",
-        content: "Había una vez una dulce...",
-        category: "Pensamiento lógico y estructurado",
-        content_type: "PDF",
-        __v: 0
-      },
-      {
-        tags: ["abecedario", "números", "letras"],
-        _id: "60442633318ffa0085227183",
-        title: "Meditaciones con Willy",
-        notes: "Favor de leer este cuento antes de comer. Jugar a interpretar los roles",
-        content: "Había una vez una dulce...",
-        category: "Pensamiento lógico y estructurado",
-        content_type: "Video musical",
-        __v: 0
-      },
-    ]
-  })
+  const [currentUser, setCurrentUser] = useState(null)
 
   const createLoginHandler = (event) => {
     let value = event.target.value
@@ -99,13 +43,19 @@ function App() {
 
   const token = localStorage.getItem("token")
 
+  useEffect( async () => {
+     await api.getUserInfoHandler(token, setCurrentUser) 
+}, [])
+
   return (
     <Router>
       <div className="App container-fluid">
         <NavBar
           logout={logout}
+          getUserInfoHandler={async () => {
+            await api.getUserInfoHandler(token, setCurrentUser)
+       }}
         />
-
         <Switch>
           <Route path="/admin">
             <Admin />
@@ -113,7 +63,7 @@ function App() {
           <Route path="/materias">
             {
               token
-                ? <Materias />
+                ? <Materias token={token} />
                 : <>
                   <WarningBar
                     title="las Materias" />
@@ -152,7 +102,7 @@ function App() {
           <Route exact path="/actividades">
             {
               token
-                ? <Actividades />
+                ? <Actividades token={token}/>
                 : <>
                   <WarningBar
                     title="las Actividades" />
@@ -197,6 +147,13 @@ function App() {
             />
           </Route>
           <Route exact path="/">
+            {/* {
+              token && 
+              <div className="row">
+                <h2 className="col-12">!Bienvenido {currentUser[1].user}!</h2>
+                <p>Empieza a buscar actividades 🤓Ve a la sección de Actividades localizada en el navegador 👆 y agrega actividades a tu panel de contenido </p>
+              </div>
+            } */}
             <Home />
           </Route>
         </Switch>
