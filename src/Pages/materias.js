@@ -98,6 +98,7 @@ function Materias(props) {
                         title={title}
                         notes={notes}
                         _id={_id}
+                        token={props.token}
                         />
                     )
                 })

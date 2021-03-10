@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import api from '../lib/api';
 import FiltroBar from '../components/filtros-bar/filtros-bar'
 import ActivityCard from '../components/activity-card/activity-card'
+import ModalMeesage from '../components/modal-message/modal-message'
 
 function Actividades(props) {
     const [activitiesList, setActivitesList] = useState(null)
@@ -31,6 +32,7 @@ function Actividades(props) {
         <>
         <div className="row actividades-row">
             <div className="col-12 text-left margin-page">
+                <ModalMeesage />
                 <h2>Actividades</h2>
                 <p>En esta página encontrarás todo el material disponible de EduCaré, haz clic sobre el tipo de recurso que quieras ver. Videos, libros o PDFs. Agrégalos a tu contenido y revísalos las veces que quieras.</p>
             </div>
@@ -51,6 +53,7 @@ function Actividades(props) {
                                 title={title}
                                 notes={notes}
                                 _id={_id}
+                                token={props.token}
                             />
                         )
                     }).reverse()
@@ -63,6 +66,7 @@ function Actividades(props) {
                                 title={title}
                                 notes={notes}
                                 _id={_id}
+                                token={props.token}
                             />
                         )
                     }).reverse()
