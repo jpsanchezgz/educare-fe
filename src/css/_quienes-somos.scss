@@ -1,22 +1,6 @@
 .second-row {
     background-color: $blanco-oscuro;
-    &:last-of-type {
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
-    }
-
-    .qs-row-1{
-        text-align: left;
-        font-family: 'Roboto', sans-serif;
-        
-
-    }
-
-    .qs-row-2 {
-        text-align: left;
-        font-family: 'Roboto', sans-serif;
-        
-    }
+    padding: 5% 5%;
 }
 
 

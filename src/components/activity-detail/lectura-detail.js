@@ -3,7 +3,8 @@ import { Button } from 'reactstrap'
 
 export default function LecturaDetail(props) {
     return (
-        <div className="row">
+        <div className="row some-padding">
+            <div className="col-12 margin-page"></div>
             <div className="col-12 text-left mb-5">
                 <h6 className="titles">{props.category}</h6>
             </div>

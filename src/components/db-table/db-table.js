@@ -34,7 +34,7 @@ const DBTable = (props) => {
             <th>&nbsp;</th>
             <th>Título</th>
             <th>Materia</th>
-            <th>&nbsp;</th>
+            <th className="d-none d-lg-block">&nbsp;</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -64,7 +64,7 @@ const DBTable = (props) => {
                               : <FontAwesomeIcon icon={faQuestion} size="1x"></FontAwesomeIcon>
                       }
                     </td>
-                    <td><button className="plus-icon d-none d-lg-block" type="button">
+                    <td><button className="plus-icon" type="button">
                       <FontAwesomeIcon icon={faMinus} size="1x" color="#FE8D03"></FontAwesomeIcon>
                     </button></td>
                   </tr>
@@ -94,7 +94,7 @@ const DBTable = (props) => {
                                 : <FontAwesomeIcon icon={faQuestion} size="1x"></FontAwesomeIcon>
                         }
                       </td>
-                      <td><button className="plus-icon d-none d-lg-block" type="button">
+                      <td><button className="plus-icon" type="button">
                         <FontAwesomeIcon icon={faMinus} size="1x" color="#FE8D03"></FontAwesomeIcon>
                       </button></td>
                     </tr>

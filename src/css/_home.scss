@@ -45,7 +45,7 @@
 
 
 .third-row{
-    padding-top: 5%;
+    padding: 5% 5%;
 
     .second-manipulative-button {
         position: relative;
@@ -62,6 +62,8 @@
     background-color: $blanco-oscuro;
     padding-top: 200px;
     padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .fifth-row{
@@ -71,5 +73,5 @@
 
 .sixth-row{
     background-color: $blanco-oscuro;
-    padding: 5% 0px;
+    padding: 5% 5%;
 }

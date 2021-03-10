@@ -7,7 +7,8 @@ import RoundButton from '../buttons/round-button'
 
 export default function PDFDetail(props) {
     return (
-        <div className="row">
+        <div className="row some-padding">
+            <div className="col-12 margin-page"></div>
             <div className="col-12 text-left mb-5">
                 <h6 className="titles">{props.category}</h6>
             </div>

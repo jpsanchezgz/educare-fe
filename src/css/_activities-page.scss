@@ -24,20 +24,6 @@
     &:hover {
         color: $naranja;
     }
-
-    // .activity-detail-Link-inside {
-    //   @media screen and (min-width: 1024px) {
-    //     height: 300px;
-    //   }
-      
-    // }
-
-    // .activity-title {
-      
-    //   // @media screen and (min-width: 1024px) {
-    //   //   height: 50px;
-    //   // }
-    // }
   }
 }
 
@@ -92,4 +78,11 @@
     position: absolute;
     top: 0;
     left: 0;
+  }
+  .actividades-row{
+    padding: 5% 5%;
+  }
+
+  .some-padding{
+    padding: 5% 5%;
   }

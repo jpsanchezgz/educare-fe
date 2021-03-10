@@ -4,7 +4,8 @@ import { Media, Button } from 'reactstrap'
 
 export default function VideoDetail ( props ) {
     return(
-        <div className="row m-auto">
+        <div className="row m-auto some-padding">
+            <div className="col-12 margin-page"></div>
             <div className="col-12 text-left mb-5">
                 <h6 className="title-activity">{props.category}</h6>
             </div>

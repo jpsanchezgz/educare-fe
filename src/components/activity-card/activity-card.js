@@ -18,8 +18,8 @@ export default function ActivityCard(props) {
 
     const toggleSaveHandler = () => setToggleSave(!toggleSave);
     return (
-        <div className="col-12 col-lg-3 d-lg-flex flex-column align-items-end activities-card shadow">
-            <div className="mx-lg-2 mb-lg-3">
+        <div className="col-12 col-lg-3 d-flex flex-column align-items-end activities-card shadow">
+            <div className="mx-2 mb-3">
                 {
                     !toggleSave
                         ? <>
@@ -41,7 +41,7 @@ export default function ActivityCard(props) {
                 }
             </div>
             <Link to={`/actividades/${props._id}`} style={{ textDecoration: 'none', backgroundColor: 'white' }} className="activity-detail-Link">
-                <div className="d-flex flex-column align-items-start text-left justify-content-around activity-detail-Link-inside">
+                <div className="d-flex flex-column align-items-start justify-content-around text-left">
                     <div>
                         {
                             props.content_type === "Lectura" ? <img src={Book} alt="PDF icon" width="75" />
@@ -49,7 +49,7 @@ export default function ActivityCard(props) {
                                     : <img src={PDF} alt="PDF icon" width="75" />
                         }
                     </div>
-                    <p className="activity-title mt-lg-2"><strong>{props.title}</strong></p>
+                    <p className="activity-title mt-2"><strong>{props.title}</strong></p>
                     <p className="">{props.category}</p>
                     {
                         props.category.includes("Lenguaje") ? <img src={Read} alt="PDF icon" width="25" />

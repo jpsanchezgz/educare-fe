@@ -32,18 +32,18 @@ function Home(props) {
                 </div>
                 {
                     !props.token &&
-                    <div className="col-12">
+                    <div className="col-12 my-5">
                         <Link to="/signup" style={{ textDecoration: 'none' }}>
                             <CallButton name="Sí, quiero ayudar a mi hija" />
                         </Link>
-                        <h2 className="titles mt-3">EduCaré es la guía que necesitas como padre o madre para apoyar a tus hijos <br />👧🏽🧒🏼👦🏻</h2>
+                        <h2 className="titles my-5">EduCaré es la guía que necesitas como padre o madre para apoyar a tus hijos <br />👧🏽🧒🏼👦🏻</h2>
                     </div>
                 }
             </div>
 
 
             <div className="row second-row mb-5 pb-5">
-                <div className="col-12 qs-row-1 px-5 my-5">
+                <div className="col-12 qs-row-1 px-5 my-5 text-left">
                     <h2 className="titles">¿Quiénes somos?</h2>
                     <PQS />
                 </div>

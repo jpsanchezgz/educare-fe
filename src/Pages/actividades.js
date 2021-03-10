@@ -32,7 +32,6 @@ function Actividades(props) {
         <>
         <div className="row actividades-row">
             <div className="col-12 text-left margin-page">
-                <ModalMeesage />
                 <h2>Actividades</h2>
                 <p>En esta página encontrarás todo el material disponible de EduCaré, haz clic sobre el tipo de recurso que quieras ver. Videos, libros o PDFs. Agrégalos a tu contenido y revísalos las veces que quieras.</p>
             </div>
