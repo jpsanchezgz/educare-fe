@@ -19,19 +19,9 @@
     }
 }
 
-// .bwwp {
-//     width: 100%;
-//     position: relative;
-//     bottom: 0px;
-//     left: 0px;;
-    
-// }
 
 .bwwpCol {
     display: flex;
 	flex-direction: column-reverse;
-	flex-wrap: nowrap;
 	justify-content: flex-start;
-	align-items: stretch;
-	align-content: stretch;
 }

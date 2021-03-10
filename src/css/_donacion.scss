@@ -9,10 +9,6 @@
     
 }
 
-.paypal-col {
-    margin: 20% 0;
-    padding-left: 2rem;
-}
 
 
 .donacion-pic {
@@ -24,9 +20,8 @@
 }
 
 .donate-button {
-    
+    transition: 0.5s;
     &:hover {
         transform: scale(1.5);
-        transition: 0.5s;
     }
 }

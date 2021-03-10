@@ -7,3 +7,11 @@
     width: 50%;
     margin: auto;
 }
+
+tr.active{
+    background-color: whitesmoke;
+}
+
+tr.no-active{
+    background-color: rgb(230, 230, 230);
+}

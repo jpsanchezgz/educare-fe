@@ -15,17 +15,17 @@ function FooterEducare() {
             <div className="row p-3">
                 <div className="col-md-2">
                     <ul className="text-white pl-0 d-flex flex-column justify-content-evenly">
-                        <Link to="/" className="li-footer"><li>Home</li></Link>
+                        <Link to="/" className="li-footer"><li>Inicio</li></Link>
                         <Link to="/" className="li-footer"><li>¿Quiénes somos?</li></Link>
-                        <Link to="/" className="li-footer"><li>Contenido</li></Link>
-                        <Link to="/" className="li-footer"><li>Formación académica</li></Link>
+                        <Link to="/materias" className="li-footer"><li>Materias</li></Link>
+                        <Link to="/actividades" className="li-footer"><li>Actividades</li></Link>
                     </ul>
                 </div>
                 <div className="col-md-2">
                     <ul className="text-white pl-0">
-                        <Link to="/" className="li-footer"><li>Login</li></Link>
-                        <Link to="/" className="li-footer"><li>Mis cursos</li></Link>
-                        <Link to="/" className="li-footer"><li>Mi progreso</li></Link>
+                        <Link to="/donacion" className="li-footer"><li>Donación</li></Link>
+                        <Link to="/hijo" className="li-footer"><li>Mis cursos</li></Link>
+                        <Link to="/hijo" className="li-footer"><li>Mi progreso</li></Link>
                     </ul>
                 </div>
                 <div className="col-md-4 md-footer">
@@ -46,9 +46,9 @@ function FooterEducare() {
                 <div className="col-md-2">
                     <ul className="text-white pl-0">
                         Desarrollado por:
-                                <li className="icons li-footer mt-3"><img src={gHicon} alt="github icon" width="20" className="mr-2" />Cin</li>
-                        <li className="icons li-footer"><img src={gHicon} alt="github icon" width="20" className="mr-2" />JP</li>
-                        <li className="icons li-footer"><img src={gHicon} alt="github icon" width="20" className="mr-2" />Pete</li>
+                        <a href="https://github.com/juanpablosg1" style={{textDecoration: 'none'}}><li className="icons li-footer mt-3"><img src={gHicon} alt="github icon" width="20" className="mr-2" />JP</li></a>
+                        <a href="https://github.com/ceenti" style={{textDecoration: 'none'}}><li className="icons li-footer"><img src={gHicon} alt="github icon" width="20" className="mr-2" />Cin</li></a>
+                        <a href="https://github.com/DevPedroA78" style={{textDecoration: 'none'}}><li className="icons li-footer"><img src={gHicon} alt="github icon" width="20" className="mr-2" />Pete</li></a>
                     </ul>
                 </div>
             </div>

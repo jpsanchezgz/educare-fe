@@ -83,13 +83,12 @@ function Materias(props) {
 
     return (
         filteredActivitiesList
-            ? <>
-                <div className="col-12 col-md-5 d-flex mb-5">
+            ? <div className="row m-4 justify-content-center">
+                <div className="col-12 mb-5 margin-page">
                     <Link to="/materias" style={{ textDecoration: 'none' }}>
                         <Button className=" butn-standard" onClick={goBackHandler}>Regresar</Button>
                     </Link>
                 </div>
-                <div className="row actividades-row">
                 {filteredActivitiesList.map(actividad => {
                     let { content_type, title, notes, _id, category } = actividad
                     return (
@@ -103,11 +102,11 @@ function Materias(props) {
                     )
                 })
                 }
-                </div>
-            </>
+            </div>
             :
             <>
                 <div className="row ml-5">
+                <div className="col-12 margin-page"></div>
                     <div className="col-6">
                         <SearchBar
                             filterH={filterHandler}

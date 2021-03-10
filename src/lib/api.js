@@ -67,7 +67,7 @@ export default {
                 if (data.success) {
                     console.log(data.data.token)
                     localStorage.setItem("token", data.data.token)
-                    window.location.href = "/actividades"
+                    window.location.href = "/"
                 } else {
                     console.log("Tus datos son incorrectos.")
                     callback(true)

@@ -32,7 +32,7 @@ function Dashboard ( props ) {
     
     return(
         <div className="row">
-            <div className="col-12 d-flex flex-column justify-content-center align-items-center">
+            <div className="col-12 d-flex flex-column justify-content-center align-items-center margin-page">
                 <input 
                 style={{ display: "none"}}
                 type="file" 

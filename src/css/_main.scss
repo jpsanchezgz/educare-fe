@@ -1,8 +1,10 @@
+
+
 .App {
     text-align: center;
-    background-color: $blanco;
     margin: 0%;
     padding: 0px;
+    background-color: $blanco;
     min-height: calc(100vh - 300px);
     
     // .container {
@@ -19,9 +21,6 @@
     font-weight: bold;
   }
   
-  .first-home-row {
-    height: calc(100vh - 50px);
-  }
   
   .search-row {
     background-color: none;
@@ -111,8 +110,11 @@
   
   }
   
-  .navbar-class {
-    margin-top: 20px;
+  .navbar-className {
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: $blanco;
   }
   
   .create-user-button {
@@ -139,9 +141,6 @@
   
   }
 
-  .titles {
-    color: $negro;
-  }
 
   .signup-row {
     
@@ -172,4 +171,8 @@
             transform: scale(1.05);
         }
   
+  }
+
+  .margin-page{
+    margin-top: 125px;
   }

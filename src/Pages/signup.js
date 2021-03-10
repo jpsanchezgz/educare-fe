@@ -8,6 +8,7 @@ function Registro ( props ) {
         <>
           {/* <div className="green-circle"></div> */}
           <div className="row">
+          <div className="col-12 margin-page"></div>
             {/* registro y form */}
             <div className="col-md-5 p-5 signup-row">
               <div className="">

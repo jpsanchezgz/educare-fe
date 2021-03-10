@@ -1,4 +1,4 @@
 applications:
 - name: educare
-  memory: 128M
+  memory: 64M
   buildpack: nginx_buildpack

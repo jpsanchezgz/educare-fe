@@ -1,3 +1,7 @@
+.titles {
+    color: $negro;
+  }
+
 .pictures {
    background-color: $blanco;
    padding: 1rem;
@@ -34,6 +38,11 @@
 
     
 }
+.sq-pics{
+    width: 100%;
+}
+
+
 
 .third-row{
     padding-top: 5%;
@@ -52,14 +61,11 @@
 .fourth-row {
     background-color: $blanco-oscuro;
     padding-top: 200px;
+    padding-bottom: 5%;
 }
 
 .fifth-row{
     padding: 5% 5%;
-
-    .sq-pics{
-        width: 100%;
-    }
 
 }
 

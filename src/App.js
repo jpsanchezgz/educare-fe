@@ -43,18 +43,17 @@ function App() {
 
   const token = localStorage.getItem("token")
 
-  useEffect( async () => {
-     await api.getUserInfoHandler(token, setCurrentUser) 
-}, [])
+  useEffect(async () => {
+    await api.getUserInfoHandler(token, setCurrentUser)
+  }, [])
 
   return (
     <Router>
       <div className="App container-fluid">
         <NavBar
           logout={logout}
-          getUserInfoHandler={async () => {
-            await api.getUserInfoHandler(token, setCurrentUser)
-       }}
+          token={token}
+          setCurrentUser={setCurrentUser}
         />
         <Switch>
           <Route path="/admin">
@@ -83,16 +82,20 @@ function App() {
           <Route path="/hijo">
             {
               token
-                ? <Dashboard 
+                ? <Dashboard
                   currentUser={currentUser}
                 />
-                : <Login
-                  createLogingUser={createLoginHandler}
-                  sendLoginUser={async () => {
-                    await api.sendLoginHandler(user, setUserIncorrect);
-                  }}
-                  userIncorrect={userIncorrect}
-                />
+                : <>
+                  <WarningBar
+                    title="tu contenido" />
+                  <Login
+                    createLogingUser={createLoginHandler}
+                    sendLoginUser={async () => {
+                      await api.sendLoginHandler(user, setUserIncorrect);
+                    }}
+                    userIncorrect={userIncorrect}
+                  />
+                </>
             }
 
           </Route>
@@ -102,7 +105,7 @@ function App() {
           <Route exact path="/actividades">
             {
               token
-                ? <Actividades token={token}/>
+                ? <Actividades token={token} />
                 : <>
                   <WarningBar
                     title="las Actividades" />
@@ -154,7 +157,7 @@ function App() {
                 <p>Empieza a buscar actividades 🤓Ve a la sección de Actividades localizada en el navegador 👆 y agrega actividades a tu panel de contenido </p>
               </div>
             } */}
-            <Home token={token}/>
+            <Home token={token} />
           </Route>
         </Switch>
       </div>

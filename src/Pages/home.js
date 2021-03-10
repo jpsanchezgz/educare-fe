@@ -26,6 +26,7 @@ function Home(props) {
         <>
 
             <div className="row first-home-row">
+            <div className="col-12 margin-page"></div>
                 <div className="col-12">
                     <MyCarousel />
                 </div>
@@ -102,15 +103,15 @@ function Home(props) {
             </div>
 
             <div className="row fourth-row">
-                <div className="col-12 col-md-6 qs-row-2 px-5 mb-5">
-                    <h2 className="titles text-left">Campos de formación académica</h2>
+                <div className="col-12 col-md-6 text-left">
+                    <h2 className="titles">Campos de formación académica</h2>
                     <p>Selecciona una de las siguientes materias para acceder a sus actividades.</p>
                     <Link to="/actividades" style={{ textDecoration: "none" }}><MainButton name="Lenguaje y comunicación" /></Link>
                     <Link to="/actividades" style={{ textDecoration: "none" }}><MainButton name="Pensamiento matemático" /></Link>
                     <Link to="/actividades" style={{ textDecoration: "none" }}><MainButton name="Comprensión natural y social" /></Link>
                 </div>
-                <div className="col-12 col-md-6 bwwpCol">
-                    <img src={ymi} alt="woman icon" className="bwwp" />
+                <div className="col-12 col-md-6">
+                    <img src={ymi} alt="3D image of father" className="sq-pics" />
                 </div>
             </div>
 
@@ -146,17 +147,19 @@ function Home(props) {
 
             <div className="row sixth-row">
                 <div className="col-12">
-                    <div className="donacion-seccion-conatiner">
-                        <h2 className="titles">¡Tú también puedes donar!</h2>
-                        <p>Por todo esto, es que se nos ocurrió esta gran idea. La idea de crear este sitio para apoyarte y lo mejor es que los beneficiados somos todos. Entonces, te invitamos a que seas un héroe, y con tu ayuda más padres de familia y escuelas podrán enseñar a los niños de forma divertida y dinámica.</p>
-                        <div className="d-flex justify-content-center align-items-center">
-                        <img src={rmi} alt="3D image of a father" width="500"/>
-                            <div>
-                                <img src={donatesvg} alt="Logo de Paypal" className="paypal-pic" />
-                                <DonateButton />
-                            </div>
-                        </div>
+                    <h2 className="titles">¡Tú también puedes donar!</h2>
+                    <p>Por todo esto, es que se nos ocurrió esta gran idea. La idea de crear este sitio para apoyarte y lo mejor es que los beneficiados somos todos. Entonces, te invitamos a que seas un héroe, y con tu ayuda más padres de familia y escuelas podrán enseñar a los niños de forma divertida y dinámica.</p>
+                </div>
+                <div className="col-12 col-md-6">
+
+                    <img src={rmi} alt="3D image of a father" className="sq-pics" />
+                </div>
+                <div className="col-12 col-md-6 d-flex flex-wrap align-items-center justify-content-center">
+                    <div className="">
+                    <img src={donatesvg} alt="Logo de Paypal" className="sq-pics" />
+                    <DonateButton />
                     </div>
+
                 </div>
             </div>
 
