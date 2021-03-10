@@ -99,8 +99,10 @@
     color: $naranja;
         
         &:hover {
-            background-color: rgb(161, 161, 161);
+            background-color: rgb(221, 221, 221);
             transform: scale(1.005);
+            color: white;
+            
         }
 
         @media screen and (max-width: 768px) {

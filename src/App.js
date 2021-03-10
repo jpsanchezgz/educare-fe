@@ -154,7 +154,7 @@ function App() {
                 <p>Empieza a buscar actividades 🤓Ve a la sección de Actividades localizada en el navegador 👆 y agrega actividades a tu panel de contenido </p>
               </div>
             } */}
-            <Home />
+            <Home token={token}/>
           </Route>
         </Switch>
       </div>
