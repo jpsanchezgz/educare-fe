@@ -19,11 +19,13 @@ function LoginForm ( props ) {
 
           <div className="d-flex justify-content-around align-items-center">
           <Link to="/signup"><span className="first-sign-up">Registrarme</span></Link>
+          <div className="login-button-container">
           <button type="button" className="loginform-button" onClick={
               () => {
                 props.sendLoginUser()
               }
           }>Iniciar sesión</button>
+          </div>
           </div>
 
         </form>
