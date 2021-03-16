@@ -7,38 +7,36 @@
         margin: auto;
 
         @media screen and (max-width: 500px) {
-            width: 70%;
+            width: 100%;
         }
     }
 
     .loginform-button {
         border: none;
-        border-radius: 50px;
+        border-radius: 8px;
         font-family: 'Roboto', sans-serif;
         font-weight: bold;
+        font-size: 1rem;
         background-color: $naranja;
         color: white;
         width: 100%;
-        padding: 1rem;
-        margin-left: 10px;
+        padding: 0.5rem;
         transition: 0.5s;
+        width: 35%;
         
         &:hover {
             background-color: $naranja-hover;
             transform: scale(1.005);
         }
-      
-      }
+    }
 
-      .first-sign-up {
-          color: grey;
-          text-align: left;
+    .first-sign-up {
+        color: grey;
+        text-align: left;
           
-
-          &:hover {
+        &:hover {
             color: rgb(71, 71, 71);
             text-decoration: underline;
-            
         }
-      }
+    }
 }
