@@ -16,8 +16,8 @@ import plusActs from '../images/school-solid.svg'
 import table from '../images/table-solid.svg'
 import free from '../images/hand-holding-usd-solid.svg'
 import bmi from '../images/black-man.jpeg'
-import niñaCubre from '../images/niña-cubrebocas.jpg'
-import estadisticas from '../images/estadistics.jpg'
+import niñaCubre from '../images/niña-cubrebocas.svg'
+import estadisticas from '../images/estadistics.svg'
 import ymi from '../images/yellow-man.jpeg'
 import rmi from '../images/idea-red-man.jpeg'
 
@@ -128,8 +128,8 @@ function Home(props) {
                 <div className="col-md-6 text-left">
                     <div>
                         <h3 className="titles">Abandono educativo en México 2021</h3>
-                        <img src={niñaCubre} alt="imagen de una niña estudiando con cubrebocas" className="sq-pics" />
                         <p>Se estima que en el 2021 el impacto de la pandemia generé una deserción de sus estudios a más de  678 mil niños y adolescentes entre 6 y 17 años.</p>
+                        <img src={niñaCubre} alt="imagen de una niña estudiando con cubrebocas" className="sq-pics" />
                     </div>
                 </div>
                 <div className="col-md-6 text-left">
