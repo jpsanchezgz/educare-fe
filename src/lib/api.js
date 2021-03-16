@@ -95,21 +95,28 @@ export default {
           })
     },
 
-    async saveNewUserHandler( newUser ) {
+    async saveNewUserHandler( newUser, callback ) {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify( newUser )
-        };
-
+        }
 
         await fetch('http://apieducare.mybluemix.net/auth/user/signup', requestOptions)
-            .then(response => response.json())
+            .then(response => {
+                if (response.success) {
+                    response.json()
+                } else {
+                    throw new Error(response.json().error)
+                }
+            })
             .then(data => {
                 console.log(data)
                 window.location.href = "/login"
-            });
-             
+            })
+            .catch(error => {
+                callback(error)
+            })
     },
 
     async getUserInfoHandler(token, callback) {
