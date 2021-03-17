@@ -3,7 +3,7 @@ export default {
 
     async getAllActivities( token ) {
         /*creamos una variable para almacenar la respuesta de la promesa, usamos await para esperar a que la promesa se resuelva*/
-        const response = await fetch(`http://localhost:8080/resources`, {
+        const response = await fetch(`http://apieducare.mybluemix.net/resources`, {
             headers: {
                 "Authorization": token
             }
@@ -13,7 +13,7 @@ export default {
         return await response.json()
     },
     async getActivityById(token, id, callBack) {
-        await fetch(`http://localhost:8080/resources/${id}`, {
+        await fetch(`http://apieducare.mybluemix.net/resources/${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ export default {
         };
 
 
-        await fetch('http://localhost:8080/resources', requestOptions)
+        await fetch('http://apieducare.mybluemix.net/resources', requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -59,7 +59,7 @@ export default {
         };
 
 
-        await fetch('http://localhost:8080/auth/user/login', requestObject)
+        await fetch('http://apieducare.mybluemix.net/auth/user/login', requestObject)
             .then(data => {
                 return data.json()
             })
@@ -76,7 +76,7 @@ export default {
     },
 
     async deleteActivity(id, token) {
-        await fetch(`http://localhost:8080/resources/${id}`, {
+        await fetch(`http://apieducare.mybluemix.net/resources/${id}`, {
             method: "DELETE",
             headers: {
                 "Authorization": token
@@ -102,7 +102,7 @@ export default {
             body: JSON.stringify( newUser )
         }
 
-        await fetch('http://localhost:8080/auth/user/signup', requestOptions)
+        await fetch('http://apieducare.mybluemix.net/auth/user/signup', requestOptions)
             .then(response => {
                 if (response.success) {
                     response.json()
@@ -129,7 +129,7 @@ export default {
         };
 
 
-        await fetch('http://localhost:8080/users/tracking', requestObject)
+        await fetch('http://apieducare.mybluemix.net/users/tracking', requestObject)
             .then(data => {
                 return data.json()
             })
@@ -154,7 +154,7 @@ export default {
         };
 
 
-        await fetch('http://localhost:8080/users/tracking', requestObject)
+        await fetch('http://apieducare.mybluemix.net/users/tracking', requestObject)
             .then(data => {
                 return data.json()
             })
