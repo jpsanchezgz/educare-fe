@@ -54,7 +54,7 @@ export default function Activity(props) {
             <div className="row pb-5">
                 <div className="col-12 col-md-6 offset-md-6">
                     <Link to="/actividades" style={{ textDecoration: 'none' }}>
-                        <Button className=" butn-standard" >Acitividades</Button>
+                        <Button className=" butn-standard" >Actividades</Button>
                     </Link>
                     <Link to="/materias" style={{ textDecoration: 'none' }}>
                         <Button className=" butn-standard" >Materias</Button>

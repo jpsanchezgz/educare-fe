@@ -56,12 +56,15 @@ function Dashboard ( props ) {
     
     return(
         <div className="row">
-            <div className="col-12 d-flex flex-column justify-content-center align-items-center margin-page">
+            <h5 className="col-12 title_dash margin-page">Conoce las actividades de tu pequeñ@</h5>
+
+            <div className="col-12 col-md-3 d-flex flex-column align-items-center">
                 <input 
                 style={{ display: "none"}}
                 type="file" 
                 onChange={fileSelectedHandler}
                 ref={inputEl} />
+
                 <button  onClick={onButtonClick} className="pic-avatar-button shadow mb-3">
                     {uploadedImage ? 
                         (<img src={uploadedImage} />) :
@@ -71,7 +74,7 @@ function Dashboard ( props ) {
                 </button>
                 <button className="upImg-button py-2 px-4" type="button" onClick={fileUploadHandler}>Upload</button>
             </div>
-            <div className="col-12">
+            <div className="col-12 col-md-9">
                 <DBTable 
                 currentUser={props.currentUser}
                 />

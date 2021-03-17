@@ -24,11 +24,11 @@ const DBTable = (props) => {
 
   let cont = 1
   return (
-    <div>
-      <div className="db-searchbar-container my-5">
+    <div className="overflow-auto">
+      <div className="db-searchbar-container my-4 col-12 col-md-6">
         <SearchBar filterH={filterHandler} texto="Busca por título..." />
       </div>
-      <Table borderless id="db-table">
+      <Table borderless id="db-table" className="rounded">
         <thead>
           <tr className="bg-dark text-white">
             <th>&nbsp;</th>
