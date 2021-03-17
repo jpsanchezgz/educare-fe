@@ -14,19 +14,43 @@ function Dashboard ( props ) {
         console.log(inputEl)
       }
     
-
     const [upImgState, setUpImgState ] = useState(null)
+    const [uploadedImage, setUploadedImage] = useState(null)
 
     const fileSelectedHandler = ( event ) => {
         setUpImgState(event.target.files[0])
     }
 
-    const fileUploadHandler = () => {
-        const fd = new FormData()
-        fd.append('upImg', upImgState, upImgState.name)
-        axios.post('https://ajaxclass-1ca34.firebaseio.com/juanpablo/pictures.json', fd)
-        .then( res => {
-            console.log(res)
+    const toBase64 = file => new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file)
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error)
+    })
+
+    const fileUploadHandler = async () => {
+        //axios.post('http://localhost:8080/admins/hijo', upImgState)
+        const file = await toBase64(upImgState)
+        const data = {
+            file: file,
+            filename: upImgState.name
+        }
+
+        console.log(data);
+
+        fetch('http://localhost:8080/users/upload_photo', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem("token")
+            },
+            body: JSON.stringify(data)
+        })
+        .then(data => {
+                return data.json()
+        })
+        .then(res => {
+            setUploadedImage(res.data.Location)
         })
     }
     
@@ -42,7 +66,11 @@ function Dashboard ( props ) {
                 ref={inputEl} />
 
                 <button  onClick={onButtonClick} className="pic-avatar-button shadow mb-3">
-                    <FontAwesomeIcon icon={faCamera} size='3x' color='#EEBD52'></FontAwesomeIcon>
+                    {uploadedImage ? 
+                        (<img src={uploadedImage} />) :
+                        (<FontAwesomeIcon icon={faCamera} size='3x' color='#EEBD52'></FontAwesomeIcon>)
+                        
+                    }
                 </button>
                 <button className="upImg-button py-2 px-4" type="button" onClick={fileUploadHandler}>Upload</button>
             </div>
@@ -54,4 +82,5 @@ function Dashboard ( props ) {
         </div>
     )
 }
+
 export default Dashboard

@@ -1,8 +1,12 @@
 .pic-avatar-button {
-    padding: 3rem;
+    padding: 1.5rem;
     background-color: white;
     border-radius: 50px;
     border: 2px dotted #bbbbbb;
+
+    img {
+        width: 100%;
+    }
 }
 
 .upImg-button {
