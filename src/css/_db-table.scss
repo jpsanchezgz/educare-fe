@@ -5,7 +5,15 @@
 
 .db-searchbar-container{
     width: 50%;
-    margin: auto;
+}
+
+.table {
+  thead {
+    th {
+      padding: 5px;
+      background: $naranja;
+    }
+  }
 }
 
 tr.active{

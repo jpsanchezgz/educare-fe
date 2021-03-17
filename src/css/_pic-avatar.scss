@@ -1,21 +1,25 @@
 .pic-avatar-button {
     padding: 3rem;
-    background-color: whitesmoke;
+    background-color: white;
     border-radius: 50px;
-    border: 2px dotted #EEBD52;
+    border: 2px dotted #bbbbbb;
 }
 
 .upImg-button {
     border: none;
-    background-color: #EEBD52;
-    color: whitesmoke;
+    background-color: #bbbbbb;
+    color: white;
     border-radius: 25px;
     font-weight: bold;
     
 }
 
 .card-tab-body {
-    border: 3px solid whitesmoke;
+    border: 3px solid white;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
+}
+
+svg path{
+    fill: $azul-clarito;
 }

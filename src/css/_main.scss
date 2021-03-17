@@ -71,8 +71,8 @@
   .signup-button {
     border: none;
     background-color: $naranja;
-    border-radius: 25px;
-    box-shadow: 4px 8px 5px #9b9b9b4b;
+    border-radius: 8px;
+    //box-shadow: 4px 8px 5px #9b9b9b4b;
     color: white;
     font-family: 'Roboto', sans-serif;
     margin-left: 5px;
@@ -87,9 +87,9 @@
   }
   
   .login-button {
-    border: 2px solid $naranja;
-    border-radius: 25px;
-    box-shadow: 4px 8px 5px  #9b9b9b4b;
+    border: 1px solid $naranja;
+    border-radius: 8px;
+    //box-shadow: 4px 8px 5px  #9b9b9b4b;
     background-color: white;
     font-family: 'Roboto', sans-serif;
     margin-left: 5px;
@@ -114,7 +114,8 @@
     top: 0;
     z-index: 1;
     width: 100%;
-    background-color: $blanco;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   }
   
   .create-user-button {
