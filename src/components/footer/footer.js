@@ -16,7 +16,6 @@ function FooterEducare() {
                 <div className="col-md-2">
                     <ul className="text-white pl-0 d-flex flex-column justify-content-evenly">
                         <Link to="/" className="li-footer"><li>Inicio</li></Link>
-                        <Link to="/" className="li-footer"><li>¿Quiénes somos?</li></Link>
                         <Link to="/materias" className="li-footer"><li>Materias</li></Link>
                         <Link to="/actividades" className="li-footer"><li>Actividades</li></Link>
                     </ul>
@@ -25,7 +24,6 @@ function FooterEducare() {
                     <ul className="text-white pl-0">
                         <Link to="/donacion" className="li-footer"><li>Donación</li></Link>
                         <Link to="/hijo" className="li-footer"><li>Mis cursos</li></Link>
-                        <Link to="/hijo" className="li-footer"><li>Mi progreso</li></Link>
                     </ul>
                 </div>
                 <div className="col-md-4 md-footer">

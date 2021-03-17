@@ -19,9 +19,9 @@ function NavBar(props) {
   const token = localStorage.getItem("token")
 
   return (
-    <div className="row navbar-className position-fixed">
+    <div className="row navbar-className navbar-light position-fixed">
       <div className="col-12">
-        <nav className="navbar navbar-expand-lg flex-wrap">
+        <nav className="navbar navbar-expand-lg flex-wrap mb-2">
           <Link className="navbar-brand" to="/"><img src={logotype} alt="logotype de EduCaré" width="200" /></Link>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
