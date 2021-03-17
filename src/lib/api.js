@@ -102,7 +102,7 @@ export default {
             body: JSON.stringify( newUser )
         }
 
-        await fetch('http://apieducare.mybluemix.net/auth/user/signup', requestOptions)
+        await fetch('http://localhost:8080/auth/user/signup', requestOptions)
             .then(response => {
                 if (response.success) {
                     response.json()
