@@ -29,10 +29,14 @@
 
   .plus-icon {
     border: none;
-        border-radius: 50%;
-        background-color: $blanco;
-        box-shadow: 2px 2px 5px rgb(185, 185, 185);
+    border-radius: 50%;
+    background-color: $blanco;
+    box-shadow: 2px 2px 5px rgb(185, 185, 185);
+    display: inline-block;
+  }
 
+  a.plus-icon {
+    padding: 1px 4px;
   }
 
   .add-act-button {
