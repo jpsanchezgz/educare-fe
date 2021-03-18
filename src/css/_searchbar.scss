@@ -1,3 +1,9 @@
+// @media (min-width:576px){
+//   .search-bar{
+//     margin: 0 auto !important;
+//   }
+// }
+
 .search-input-component {
   background-color: white;
     border: none;
@@ -19,6 +25,7 @@
 
 .search-component-bar {
     background-color: white;
+    //border: 1px solid $naranja;
     border: 1px solid $naranja;
     position: relative;
     display: flex;
@@ -35,3 +42,5 @@
     color: $azul;
     border-radius: 25px;
   }
+  
+

@@ -23,14 +23,14 @@
 }
 
 .form-controle {
-  border: 2px solid #FE8D03;
+  border: 1px solid #FE8D03;
   border-radius: 8px;
   color: #FE8D03;
   width: 100%;
   /* text-align: center; */
   /* text-transform: capitalize; */
-  font-size: 1.5rem;
-  padding: 0.75rem;
+  font-size: 1rem;
+  padding: 0.5rem;
 }
 
 ::-webkit-input-placeholder {
@@ -63,14 +63,15 @@
 }
 
 .vl {
-  border-left: 2px solid #B0B1A9;
+  /*border-left: 2px solid #B0B1A9;*/
   height: 500px;
   margin-top: 5rem;
 }
 
 p {
-  color: #4D554F;
-  font-size: 20px;
+  color: #363636;
+  font-size: 16px;
+  /*text-align: justify;*/
 }
 
 .signup-button {
@@ -86,7 +87,7 @@ p {
 }
 
 .signup-button:hover {
-  background-color: #985300;
+  background-color: #ed7402;
   -webkit-transform: scale(1.005);
           transform: scale(1.005);
 }
@@ -104,7 +105,7 @@ p {
 }
 
 .login-button:hover {
-  background-color: #dddddd;
+  background-color: #fff0e3;
   -webkit-transform: scale(1.005);
           transform: scale(1.005);
   color: white;
@@ -127,20 +128,20 @@ p {
 
 .create-user-button {
   border: none;
-  border-radius: 50px;
-  font-size: 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   background-color: #FE8D03;
   color: whitesmoke;
-  width: 100%;
-  padding: 1rem;
+  width: 50%;
+  padding: 0.5rem;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .create-user-button:hover {
-  background-color: #985300;
+  background-color: #ed7402;
   -webkit-transform: scale(1.005);
           transform: scale(1.005);
 }
@@ -191,7 +192,7 @@ p {
 }
 
 .round-button:hover {
-  background-color: #985300;
+  background-color: #ed7402;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
@@ -356,26 +357,27 @@ p {
 
 @media screen and (max-width: 500px) {
   .marco-login .login-col {
-    width: 70%;
+    width: 100%;
   }
 }
 
 .marco-login .loginform-button {
   border: none;
-  border-radius: 50px;
+  border-radius: 8px;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
+  font-size: 1rem;
   background-color: #FE8D03;
   color: white;
   width: 100%;
-  padding: 1rem;
-  margin-left: 10px;
+  padding: 0.5rem;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  width: 35%;
 }
 
 .marco-login .loginform-button:hover {
-  background-color: #985300;
+  background-color: #ed7402;
   -webkit-transform: scale(1.005);
           transform: scale(1.005);
 }
@@ -429,11 +431,11 @@ p {
 }
 
 .materias-body {
-  background-color: whitesmoke;
-  border: 3px solid #FE8D03;
+  background-color: #f8f9f9;
+  border: 2px solid #efefef;
   text-decoration: none;
-  border-radius: 25px;
-  padding: 1.5rem;
+  border-radius: 15px;
+  padding: 1rem;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   min-height: 315px;
@@ -451,7 +453,7 @@ p {
 .materias-body:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
-  background-color: white;
+  background-color: whitesmoke;
 }
 
 .materias-body .title {
@@ -512,7 +514,7 @@ p {
           align-items: stretch;
   width: 100%;
   border-radius: 8px;
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 
 .search-button-component {
@@ -523,10 +525,14 @@ p {
 }
 
 .pic-avatar-button {
-  padding: 3rem;
+  padding: 1.5rem;
   background-color: white;
   border-radius: 50px;
   border: 2px dotted #bbbbbb;
+}
+
+.pic-avatar-button img {
+  width: 100%;
 }
 
 .upImg-button {
@@ -618,6 +624,11 @@ svg path {
 
 .db-searchbar-container {
   width: 50%;
+}
+
+.table thead th {
+  padding: 5px;
+  background: #FE8D03;
 }
 
 tr.active {
@@ -815,7 +826,7 @@ Button.butn-standard:hover {
 }
 
 .preview-pdf-div .middle-pdf-preview .text-pdf-preview {
-  background-color: #985300;
+  background-color: #ed7402;
   color: white;
   font-size: 16px;
   padding: 16px 32px;
@@ -858,7 +869,7 @@ Button.butn-standard:hover {
   cursor: pointer;
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
-  background-color: #985300;
+  background-color: #ed7402;
 }
 
 .sq-pics {

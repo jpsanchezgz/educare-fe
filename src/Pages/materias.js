@@ -11,40 +11,32 @@ function Materias(props) {
     const [materias, setMaterias] = useState([
         {
             title: "Lenguaje y comunicación",
-            content: "Fomenta la lectura de tus pequeños a una temprana edad."
+            content: "Fomenta la lectura de tus pequeños."
         },
         {
             title: "Pensamiento lógico y estructurado",
-            content: "Fomenta desde pequeños el pensamiento estructurado y metódico."
+            content: "Fomenta el pensamiento estructurado y metódico."
         },
         {
             title: "Arte y música",
-            content: "Ayuda a desarrollar la creatividad de tus hijos para explotar sus talentos."
+            content: "Explota sus talentos y desarrolla su creatividad."
         },
         {
             title: "Desarrollo emocional y social",
-            content: "Fomenta la lectura de tus pequeños a una temprana edad."
+            content: "Fortalece a tu pequeño desde su interior."
         },
         {
             title: "Arte y música II",
-            content: "Fomenta desde pequeños el pensamiento estructurado y metódico."
+            content: "Explota sus talentos y desarrolla su creatividad."
         },
         {
             title: "Desarrollo intelectual y cognitivo",
-            content: "Ayuda a desarrollar la creatividad de tus hijos para explotar sus talentos."
+            content: "Ayuda a desarrollar la creatividad de los pequeños."
         },
         {
             title: "Lenguaje y comunicación II",
-            content: "Fomenta la lectura de tus pequeños a una temprana edad."
-        },
-        {
-            title: "Pensamiento lógico y estructurado II",
-            content: "Fomenta desde pequeños el pensamiento estructurado y metódico."
-        },
-        {
-            title: "Arte y música III",
-            content: "Ayuda a desarrollar la creatividad de tus hijos para explotar sus talentos."
-        },
+            content: "Fomenta la lectura de tus pequeños."
+        }
 
     ])
 
@@ -106,43 +98,44 @@ function Materias(props) {
             </div>
             :
             <>
-                <div className="row ml-5">
-                <div className="col-12 margin-page"></div>
-                    <div className="col-6">
-                        <SearchBar
-                            filterH={filterHandler}
-                            texto="Busca por nombre de materia..."
-                        />
+                <div className="row d-flex flex-column justify-content-center">
+                    <div className="margin-page col-12">
+                        <div className="col-12 col-md-6 d-flex flex-column justify-content-center">
+                            <SearchBar
+                                filterH={filterHandler}
+                                texto="Busca por materia..."
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className="row mb-5 px-5">
-                    {
-                        filterdMaterias
-                            ? filterdMaterias.map(materia => {
-                                return (
-                                    <div className="col-lg-4 my-3">
-                                        <MateriaCard
-                                            title={materia.title}
-                                            content={materia.content}
-                                            filterByMateriaHandler={filterByMateriaHandler}
+                    <div className="row mb-5 px-5">
+                        {
+                            filterdMaterias
+                                ? filterdMaterias.map(materia => {
+                                    return (
+                                        <div className="col-lg-4 my-3">
+                                            <MateriaCard
+                                                title={materia.title}
+                                                content={materia.content}
+                                                filterByMateriaHandler={filterByMateriaHandler}
 
-                                        />
-                                    </div>
-                                )
-                            })
-                            : materias.map(materia => {
-                                return (
-                                    <div className="col-lg-4 my-3">
-                                        <MateriaCard
-                                            title={materia.title}
-                                            content={materia.content}
-                                            filterByMateriaHandler={filterByMateriaHandler}
+                                            />
+                                        </div>
+                                    )
+                                })
+                                : materias.map(materia => {
+                                    return (
+                                        <div className="col-lg-4 my-3">
+                                            <MateriaCard
+                                                title={materia.title}
+                                                content={materia.content}
+                                                filterByMateriaHandler={filterByMateriaHandler}
 
-                                        />
-                                    </div>
-                                )
-                            })
-                    }
+                                            />
+                                        </div>
+                                    )
+                                })
+                        }
+                    </div>
                 </div>
             </>
 
