@@ -32,12 +32,25 @@
     filter: contrast(0%);
 }
 
+.carousel-control-prev {
+    z-index: 0 !important;
+}
+
+.carousel-control-next {
+    z-index: 0 !important;
+}
+
+.carousel-indicators {
+    z-index: 0 !important;
+}
+
 .carousel-bg {
         margin: auto;
 }
 
 .carousel-picture {
-    width: 50%;
+    width: 40%;
+    padding: 15px;
 
     @media screen and (max-width: 768px) {
         width: 75%;

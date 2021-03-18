@@ -198,7 +198,7 @@ p {
 }
 
 .margin-page {
-  margin-top: 125px;
+  margin-top: 115px;
 }
 
 .CarouselIndicators {
@@ -206,12 +206,25 @@ p {
           filter: contrast(0%);
 }
 
+.carousel-control-prev {
+  z-index: 0 !important;
+}
+
+.carousel-control-next {
+  z-index: 0 !important;
+}
+
+.carousel-indicators {
+  z-index: 0 !important;
+}
+
 .carousel-bg {
   margin: auto;
 }
 
 .carousel-picture {
-  width: 50%;
+  width: 40%;
+  padding: 15px;
 }
 
 @media screen and (max-width: 768px) {
@@ -550,7 +563,7 @@ p {
 }
 
 svg path {
-  fill: #c6e9ed;
+  fill: #999999;
 }
 
 .horizontal-slider {
@@ -619,7 +632,7 @@ svg path {
 
 .check-icon {
   border: none;
-  background-color: #ffffff00;
+  background-color: #ffffff;
 }
 
 .db-searchbar-container {
@@ -628,15 +641,7 @@ svg path {
 
 .table thead th {
   padding: 5px;
-  background: #FE8D03;
-}
-
-tr.active {
-  background-color: whitesmoke;
-}
-
-tr.no-active {
-  background-color: #e6e6e6;
+  background: #ffbc6b;
 }
 
 .activities-card {
@@ -679,6 +684,11 @@ tr.no-active {
   background-color: #f9f9f9;
   -webkit-box-shadow: 2px 2px 5px #b9b9b9;
           box-shadow: 2px 2px 5px #b9b9b9;
+  display: inline-block;
+}
+
+a.plus-icon {
+  padding: 1px 4px;
 }
 
 .add-act-button {
