@@ -33,7 +33,7 @@ const Dashboard = ( props ) => {
             filename: upImgState.name
         }
 
-        fetch('http://localhost:8080/users/upload_photo', {
+        fetch('http://apieducare.mybluemix.net/users/upload_photo', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
