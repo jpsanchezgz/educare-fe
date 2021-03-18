@@ -178,9 +178,16 @@ export default {
         };
 
         await fetch(`http://apieducare.mybluemix.net/users/tracking/${activityId}`, requestObject)
-            .then(data => {
-                console.log(data)
-                return data.json()
+            .then(response => {
+                if (!response.ok) {
+                    return response.json()
+                    .then(error => { throw new Error(error.message) })
+                }
+                return response.json()
+            })
+            .then( json => {})
+            .catch((error) => {
+                console.log(error.message);
             })
     },
 
