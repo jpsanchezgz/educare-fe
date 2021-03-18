@@ -32,7 +32,7 @@ function Home(props) {
                 </div>
                 {
                     !props.token &&
-                    <div className="col-12 my-5">
+                    <div className="col-12 my-3">
                         <Link to="/signup" style={{ textDecoration: 'none' }}>
                             <CallButton name="Sí, quiero ayudar a mi hija" />
                         </Link>
