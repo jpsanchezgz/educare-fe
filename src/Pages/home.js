@@ -15,11 +15,11 @@ import Resources from '../images/three-resources-icon-g.svg'
 import plusActs from '../images/school-solid.svg'
 import table from '../images/table-solid.svg'
 import free from '../images/hand-holding-usd-solid.svg'
-import bmi from '../images/black-man.jpeg'
+import bmi from '../images/black-man.svg'
 import niñaCubre from '../images/niña-cubrebocas.svg'
 import estadisticas from '../images/estadistics.svg'
-import ymi from '../images/yellow-man.jpeg'
-import rmi from '../images/idea-red-man.jpeg'
+import ymi from '../images/yellow-man.svg'
+import rmi from '../images/idea-red-man.svg'
 
 function Home(props) {
     return (
@@ -43,7 +43,7 @@ function Home(props) {
 
 
             <div className="row second-row mb-5 pb-5">
-                <div className="col-12 qs-row-1 px-5 my-5 text-left">
+                <div className="col-12 qs-row-1 px-5 my-5 text-justify">
                     <h2 className="titles">¿Quiénes somos?</h2>
                     <PQS />
                 </div>
@@ -70,23 +70,23 @@ function Home(props) {
             <div className="row third-row">
                 <BenefitCard
                     icon={free}
-                    title="Esta plataforma es 100% gratiuita"
-                    content="También podrías ser un papá o una mamá héroe donando, ya que esta plataforma se sustenta únicamente a través de donaciones. Con tu ayuda más padres de familia y escuelas podrán enseñar a los niños de forma divertida y dinámica."
+                    title="Esta plataforma es 100% gratuita"
+                    content="Esta plataforma se sustenta a través de donaciones. Con tu ayuda más padres de familia y escuelas podrán enseñar a los niños de forma divertida y dinámica."
                 />
                 <BenefitCard
                     icon={plusActs}
                     title="¡Escuela en casa y padres profesores!"
-                    content="No te rompas la cabeza buscando cómo enseñarle a tus hijos lo que deberían de estar aprendiendo en la escuela en estos momentos. Sabemos lo difícil que es hacerlo solos desde casa. Sigamos unidos en esta situación mundial. ¡Nosotros te apoyamos con las actividades!"
+                    content="No te rompas la cabeza buscando cómo enseñarle a tus hijos, sabemos lo difícil que es hacerlo solos desde casa. Queremos apoyarte con algunas las actividades educativas."
                 />
                 <BenefitCard
                     icon={table}
                     title="Tu propio panel de control de contenido"
-                    content='Cuando encuentres una actividad que te gustó muchísimo, no se te olvide agregarla a tu porpio panel de contenido, "Mi contenido". Guarda todas las actividades que quieras y quítalas cuando hayas terminado con ellas. ¡Si no las quieres quitar, ahí se pueden quedar!'
+                    content='Cuando encuentres una actividad que te gustó muchísimo, no olvides agregarla a tu panel "Mi contenido". Guarda todas las actividades que quieras revisar y quítalas cuando hayas terminado con ellas.'
                 />
                 <BenefitCard
                     icon={Resources}
                     title="Videos, libros y PDFs"
-                    content="Desde el principio supimos que tus hijos no aprenden todos de la misma forma. Esta plataforma es totalmente inclusiva con todas las formas de aprendizaje. Tenemos todo el tiempo en la mente que tus hijos requerirán diferentes tipos de recursos para aprender."
+                    content="Sabemos que todos los niños aprenden de distinta forma por eso hicimos una plataforma totalmente inclusiva para las distintas formas de aprendizaje. Regístrate y utiliza nuestros distintos recursos de aprendizaje."
                 />
                 {
                     !props.token &&
@@ -116,7 +116,7 @@ function Home(props) {
             </div>
 
             <div className="row fifth-row">
-                <div className="col-12 text-left">
+                <div className="col-12 text-justify">
                     <h2 className="titles">¿Sabías qué?</h2>
                     <p>Nosotros te entendemos y es por eso que estamos aquí a tu lado y queremos hacer la diferencia contigo y tus hijos.</p>
                 </div>
@@ -125,14 +125,14 @@ function Home(props) {
                         <img src={bmi} alt="3D image of a father" className="sq-pics" />
                     </div>
                 </div>
-                <div className="col-md-6 text-left">
+                <div className="col-md-6 text-justify">
                     <div>
                         <h3 className="titles">Abandono educativo en México 2021</h3>
                         <p>Se estima que en el 2021 el impacto de la pandemia generé una deserción de sus estudios a más de  678 mil niños y adolescentes entre 6 y 17 años.</p>
                         <img src={niñaCubre} alt="imagen de una niña estudiando con cubrebocas" className="sq-pics" />
                     </div>
                 </div>
-                <div className="col-md-6 text-left">
+                <div className="col-md-6 text-justify">
                     <p>En la encuesta realizado a una muestra representativa, detectamos lo siguiente:</p>
                     <ul>
                         <li><p>El 100% de los entrevistados desean conocer el avance educativo de los niños.</p></li>
