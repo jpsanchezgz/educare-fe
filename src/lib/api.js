@@ -168,4 +168,43 @@ export default {
             })
     },
 
+    async deleteResourceFromUserHandler(token, activityId) {
+        const requestObject = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+            }
+        };
+
+        await fetch(`http://apieducare.mybluemix.net/users/tracking/${activityId}`, requestObject)
+            .then(data => {
+                console.log(data)
+                return data.json()
+            })
+    },
+
+    async getUserInfo(token, callback) {
+        const requestObject = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+            }
+        }
+
+        await fetch("http://apieducare.mybluemix.net/users/info", requestObject)
+            .then(response => {
+                if (!response.ok) {
+                    return response.json()
+                    .then(error => { throw new Error(error.message) })
+                }
+                return response.json()
+            })
+            .then( json => callback(json))
+            .catch((error) => {
+                console.log(error.message);
+            })
+    }
+
 }

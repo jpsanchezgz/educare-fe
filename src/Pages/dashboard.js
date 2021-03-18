@@ -1,17 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react'
-import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCamera } from '@fortawesome/free-solid-svg-icons'
 import DBTable from '../components/db-table/db-table'
+import api from '../lib/api'
 
 
-function Dashboard ( props ) {
-
+const Dashboard = ( props ) => {
     const inputEl = useRef(null)
     
     const onButtonClick = () => {
         inputEl.current.click()
-        console.log(inputEl)
       }
     
     const [upImgState, setUpImgState ] = useState(null)
@@ -29,20 +27,17 @@ function Dashboard ( props ) {
     })
 
     const fileUploadHandler = async () => {
-        //axios.post('http://localhost:8080/admins/hijo', upImgState)
         const file = await toBase64(upImgState)
         const data = {
             file: file,
             filename: upImgState.name
         }
 
-        console.log(data);
-
         fetch('http://localhost:8080/users/upload_photo', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem("token")
+                'Authorization': props.token
             },
             body: JSON.stringify(data)
         })
@@ -53,8 +48,14 @@ function Dashboard ( props ) {
             setUploadedImage(res.data.Location)
         })
     }
+
+    useEffect(() => {
+        api.getUserInfo(props.token, (response) => {
+            setUploadedImage(response.data.kid_photo)
+        })
+    }, [])
     
-    return(
+    return (
         <div className="row">
             <h5 className="col-12 title_dash margin-page">Conoce las actividades de tu pequeñ@</h5>
 

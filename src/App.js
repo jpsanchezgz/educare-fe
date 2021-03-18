@@ -84,6 +84,7 @@ function App() {
               token
                 ? <Dashboard
                   currentUser={currentUser}
+                  token={token}
                 />
                 : <>
                   <WarningBar

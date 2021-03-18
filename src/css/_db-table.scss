@@ -1,6 +1,6 @@
 .check-icon{
     border: none;
-    background-color: #ffffff00;
+    background-color: #ffffff;
 }
 
 .db-searchbar-container{
@@ -11,15 +11,8 @@
   thead {
     th {
       padding: 5px;
-      background: $naranja;
+      background: #ffbc6b;
     }
   }
 }
 
-tr.active{
-    background-color: whitesmoke;
-}
-
-tr.no-active{
-    background-color: rgb(230, 230, 230);
-}
