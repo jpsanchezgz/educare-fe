@@ -7,7 +7,7 @@ import PaintMusic from '../../images/music-art.png'
 
 function MateriasCard ( props ) {
     return (
-        <div className="materias-body d-flex flex-column justify-content-around align-items-center">
+        <div className={`materias-body d-flex flex-column justify-content-around align-items-center ${!props.enabled ? 'disabled' : ''}`}>
             <button type="button" onClick={props.filterByMateriaHandler} className="icon-materia-button">
                 {
                     props.title.includes("Lenguaje") ? <img src={Read} alt="PDF icon" width="85" name={props.title} />

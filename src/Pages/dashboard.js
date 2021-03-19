@@ -34,7 +34,7 @@ const Dashboard = ( props ) => {
             filename: upImgState.name
         }
 
-        fetch('http://apieducare.mybluemix.net/users/upload_photo', {
+        fetch('https://apieducare.mybluemix.net/users/upload_photo', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',

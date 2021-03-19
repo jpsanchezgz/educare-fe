@@ -11,31 +11,38 @@ function Materias(props) {
     const [materias, setMaterias] = useState([
         {
             title: "Lenguaje y comunicación",
-            content: "Fomenta la lectura de tus pequeños."
+            content: "Fomenta la lectura de tus pequeños.",
+            enabled: true,
         },
         {
             title: "Pensamiento lógico y estructurado",
-            content: "Fomenta el pensamiento estructurado y metódico."
+            content: "Fomenta el pensamiento estructurado y metódico.",
+            enabled: false,
         },
         {
             title: "Arte y música",
-            content: "Explota sus talentos y desarrolla su creatividad."
+            content: "Explota sus talentos y desarrolla su creatividad.",
+            enabled: false,
         },
         {
             title: "Desarrollo emocional y social",
-            content: "Fortalece a tu pequeño desde su interior."
+            content: "Fortalece a tu pequeño desde su interior.",
+            enabled: false,
         },
         {
             title: "Arte y música II",
-            content: "Explota sus talentos y desarrolla su creatividad."
+            content: "Explota sus talentos y desarrolla su creatividad.",
+            enabled: false,
         },
         {
             title: "Desarrollo intelectual y cognitivo",
-            content: "Ayuda a desarrollar la creatividad de los pequeños."
+            content: "Ayuda a desarrollar la creatividad de los pequeños.",
+            enabled: false,
         },
         {
             title: "Lenguaje y comunicación II",
-            content: "Fomenta la lectura de tus pequeños."
+            content: "Fomenta la lectura de tus pequeños.",
+            enabled: false,
         }
 
     ])
@@ -116,6 +123,7 @@ function Materias(props) {
                                             <MateriaCard
                                                 title={materia.title}
                                                 content={materia.content}
+                                                enabled={materia.enabled}
                                                 filterByMateriaHandler={filterByMateriaHandler}
 
                                             />
@@ -128,6 +136,7 @@ function Materias(props) {
                                             <MateriaCard
                                                 title={materia.title}
                                                 content={materia.content}
+                                                enabled={materia.enabled}
                                                 filterByMateriaHandler={filterByMateriaHandler}
 
                                             />

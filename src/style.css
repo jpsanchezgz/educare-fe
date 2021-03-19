@@ -443,8 +443,8 @@ p {
 }
 
 .materias-body {
-  background-color: #f8f9f9;
-  border: 2px solid #efefef;
+  background-color: whitesmoke;
+  border: 2px solid #dedede;
   text-decoration: none;
   border-radius: 15px;
   padding: 1rem;
@@ -452,6 +452,12 @@ p {
   transition: 0.5s;
   min-height: 315px;
   min-width: 200px;
+}
+
+.materias-body.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
 @media screen and (max-width: 1024px) {
