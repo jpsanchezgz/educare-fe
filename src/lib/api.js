@@ -1,4 +1,4 @@
-export default {
+const api =  {
     /*Creamos las funciones para cada petición, estas funciones son asíncronas puesto que fetch nos devolverá una promesa que debemos esperar a que sea resuelta*/
 
     async getAllActivities( token ) {
@@ -95,7 +95,7 @@ export default {
           })
     },
 
-    async saveNewUserHandler( newUser, callback ) {
+    async saveNewUserHandler( newUser, successCallback, errorCallback ) {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -104,18 +104,22 @@ export default {
 
         await fetch('https://apieducare.mybluemix.net/auth/user/signup', requestOptions)
             .then(response => {
-                if (response.success) {
-                    response.json()
+                if (response.ok) {
+                    return response.json()
                 } else {
                     throw new Error(response.json().error)
                 }
             })
             .then(data => {
                 console.log(data)
-                window.location.href = "/login"
+                if(data.success) {
+                    successCallback(data)
+                } else {
+                    errorCallback(data)
+                }
             })
             .catch(error => {
-                callback(error)
+                errorCallback(error)
             })
     },
 
@@ -215,3 +219,5 @@ export default {
     }
 
 }
+
+export default api

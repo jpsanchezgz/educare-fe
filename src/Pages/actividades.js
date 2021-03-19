@@ -43,7 +43,8 @@ function Actividades(props) {
         <div className="row m-4 justify-content-center">
             {
                 filteredActivitiesList
-                    ? filteredActivitiesList.map(actividad => {
+                    ? filteredActivitiesList.length === 0 ? <p>En este momento estamos trabajando para conseguirte este tipo de contenido</p> 
+                    : filteredActivitiesList.map(actividad => {
                         let { content_type, title, notes, _id, category } = actividad
                         return (
                             <ActivityCard
