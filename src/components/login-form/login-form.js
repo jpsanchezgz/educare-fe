@@ -38,12 +38,6 @@ function LoginForm(props) {
             Iniciar sesión
           </button>
         </div>
-
-        <div className="col-12 mt-3">
-          <Link to="#">
-            ¿Olvidaste tu contraseña?
-          </Link>
-        </div>
       </div>
     </form>
   );
