@@ -253,7 +253,7 @@ p {
 .main-button {
   padding: 1rem;
   width: 100%;
-  border: 3px solid #FE8D03;
+  border: 1px solid #FE8D03;
   border-radius: 16px;
   color: #FE8D03;
   font-family: 'Roboto', sans-serif;
