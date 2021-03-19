@@ -4,7 +4,7 @@
   /*margin: 0%;*/
   /*padding: 0px;*/
   background-color: #f9f9f9;
-  min-height: calc(100vh - 230px);
+  min-height: calc(100vh - 100px);
 }
 
 .registry-span {
