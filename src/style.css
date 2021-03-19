@@ -1,10 +1,10 @@
 @charset "UTF-8";
 .App {
   text-align: center;
-  margin: 0%;
-  padding: 0px;
+  /*margin: 0%;*/
+  /*padding: 0px;*/
   background-color: #f9f9f9;
-  min-height: calc(100vh - 300px);
+  min-height: calc(100vh - 230px);
 }
 
 .registry-span {
@@ -218,10 +218,9 @@ p {
   z-index: 0 !important;
 }
 
-.carousel-bg {
-  margin: auto;
-}
-
+/*.carousel-bg {
+        margin: auto;
+}*/
 .carousel-picture {
   width: 40%;
   padding: 15px;
@@ -277,7 +276,7 @@ p {
 .footer-container {
   background-color: #58D2E0;
   height: auto;
-  padding: 1.5rem 0px;
+  padding: 1.5rem auto;
   font-size: 1.5rem;
 }
 
