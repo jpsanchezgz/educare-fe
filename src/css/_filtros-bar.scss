@@ -1,9 +1,10 @@
 .filtros-bar {
-    background-color: #eeeeee;
-    border-radius: 50px;
     padding: 1rem;
-    margin-bottom: 2%;
-    margin-top: 2%;
+    // background-color: #eeeeee;
+    // border-radius: 50px;
+    // 
+    // margin-bottom: 2%;
+    // margin-top: 2%;
 
     // .filter-icons {
     //     filter: drop-shadow( 3px 3papalo
@@ -15,12 +16,12 @@
         border-radius: 50%;
         padding: 1rem;
         background-color: $blanco;
-        box-shadow: 5px 5px 10px rgb(185, 185, 185);
+        //box-shadow: 5px 5px 10px rgb(185, 185, 185);
         transition: 0.5s;
 
         &:hover {
-            transform: scale(1.05);
-            background-color: white;
+            transform: scale(1.75);
+            //background-color: white;
         }
     }
 }

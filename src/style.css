@@ -555,6 +555,10 @@ p {
   font-weight: bold;
 }
 
+.upImg-button.active {
+  background-color: #FE8D03;
+}
+
 .card-tab-body {
   border: 3px solid white;
   border-top-right-radius: 50px;
@@ -645,12 +649,7 @@ svg path {
 
 .activities-card {
   height: auto;
-  border: 3px solid #58D2E0;
-  background-color: white;
-  padding: 1.5rem;
   margin: 1rem;
-  border-radius: 25px;
-  min-width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -660,13 +659,20 @@ svg path {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  background-color: whitesmoke;
+  border: 2px solid #efefef;
+  text-decoration: none;
+  border-radius: 15px;
+  padding: 1rem;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  min-width: 200px;
 }
 
 .activities-card:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+  background-color: whitesmoke;
 }
 
 .activities-card .activity-detail-Link {
@@ -761,11 +767,7 @@ Button.butn-standard:hover {
 }
 
 .filtros-bar {
-  background-color: #eeeeee;
-  border-radius: 50px;
   padding: 1rem;
-  margin-bottom: 2%;
-  margin-top: 2%;
 }
 
 .filtros-bar .filter-buttons-activities {
@@ -773,16 +775,13 @@ Button.butn-standard:hover {
   border-radius: 50%;
   padding: 1rem;
   background-color: #f9f9f9;
-  -webkit-box-shadow: 5px 5px 10px #b9b9b9;
-          box-shadow: 5px 5px 10px #b9b9b9;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .filtros-bar .filter-buttons-activities:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  background-color: white;
+  -webkit-transform: scale(1.75);
+          transform: scale(1.75);
 }
 
 .lectura-content-col {
