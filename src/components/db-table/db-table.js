@@ -24,7 +24,7 @@ const DBTable = (props) => {
   }
 
   const deleteHandler = (event) => {
-    const activity_id = event.target.dataset.id
+    const activity_id = event.currentTarget.dataset.id
     if(window.confirm('¿Estás seguro de eliminar la actividad de tu historial?')) {
       api.deleteResourceFromUserHandler(localStorage.getItem("token"), activity_id)
       setFilteredActivities(props.currentUser.filter(actividad => actividad._id !== activity_id))
