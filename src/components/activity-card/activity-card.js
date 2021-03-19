@@ -18,7 +18,7 @@ export default function ActivityCard(props) {
 
     const toggleSaveHandler = () => setToggleSave(!toggleSave);
     return (
-        <div className="col-12 col-lg-3 d-flex flex-column align-items-end activities-card shadow">
+        <div className="col-11 col-lg-3 d-flex flex-column align-items-end activities-card">
             <div className="mx-2 mb-3">
                 {
                     !toggleSave
@@ -40,8 +40,8 @@ export default function ActivityCard(props) {
                         </>
                 }
             </div>
-            <Link to={`/actividades/${props._id}`} style={{ textDecoration: 'none', backgroundColor: 'white' }} className="activity-detail-Link">
-                <div className="d-flex flex-column align-items-start justify-content-around text-left">
+            <Link to={`/actividades/${props._id}`} style={{ textDecoration: 'none', backgroundColor: 'whitesmoke' }} className="activity-detail-Link">
+                <div className="d-flex flex-column align-items-center justify-content-around text-center mb-4">
                     <div>
                         {
                             props.content_type === "Lectura" ? <img src={Book} alt="PDF icon" width="75" />

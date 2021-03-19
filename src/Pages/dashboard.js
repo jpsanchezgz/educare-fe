@@ -14,6 +14,7 @@ const Dashboard = ( props ) => {
     
     const [upImgState, setUpImgState ] = useState(null)
     const [uploadedImage, setUploadedImage] = useState(null)
+    const [profile, setProfile] = useState({});
 
     const fileSelectedHandler = ( event ) => {
         setUpImgState(event.target.files[0])
@@ -52,12 +53,15 @@ const Dashboard = ( props ) => {
     useEffect(() => {
         api.getUserInfo(props.token, (response) => {
             setUploadedImage(response.data.kid_photo)
+            setProfile(response.data)
+            console.log(response.data.kid_name)
+            console.log()
         })
     }, [])
     
     return (
         <div className="row">
-            <h5 className="col-12 title_dash margin-page">Conoce las actividades de tu pequeñ@</h5>
+            <h4 className="col-12 title_dash margin-page">Conoce las actividades de <strong>{profile.kid_name}</strong></h4>
 
             <div className="col-12 col-md-3 d-flex flex-column align-items-center">
                 <input 
@@ -73,7 +77,8 @@ const Dashboard = ( props ) => {
                         
                     }
                 </button>
-                <button className="upImg-button py-2 px-4" type="button" onClick={fileUploadHandler}>Upload</button>
+                <small className="my-2">Cambia la foto al dar click en ella</small>
+                <button disabled={!upImgState} className={`upImg-button py-2 px-4 ${upImgState ? "active": ""}`} type="button" onClick={fileUploadHandler} >Subir</button>
             </div>
             <div className="col-12 col-md-9">
                 <DBTable 

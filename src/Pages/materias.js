@@ -100,7 +100,7 @@ function Materias(props) {
             <>
                 <div className="row d-flex flex-column justify-content-center">
                     <div className="margin-page col-12">
-                        <div className="col-12 col-md-6 d-flex flex-column justify-content-center">
+                        <div className="col-12 col-md-6 d-flex flex-column justify-content-center mt-4">
                             <SearchBar
                                 filterH={filterHandler}
                                 texto="Busca por materia..."
@@ -112,7 +112,7 @@ function Materias(props) {
                             filterdMaterias
                                 ? filterdMaterias.map(materia => {
                                     return (
-                                        <div className="col-lg-4 my-3">
+                                        <div className="col-lg-3 my-4">
                                             <MateriaCard
                                                 title={materia.title}
                                                 content={materia.content}
@@ -124,7 +124,7 @@ function Materias(props) {
                                 })
                                 : materias.map(materia => {
                                     return (
-                                        <div className="col-lg-4 my-3">
+                                        <div className="col-lg-3 my-4">
                                             <MateriaCard
                                                 title={materia.title}
                                                 content={materia.content}
